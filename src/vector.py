@@ -39,6 +39,7 @@ class Vec2(Vec):
         [x, y] = e # make sure e is 2D
         self.elems = [x, y]
 
+
 class Vec3(Vec):
     
     def __init__(self, e):
