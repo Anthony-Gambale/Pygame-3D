@@ -1,2 +1,2 @@
-# Python-3D
-3D graphics renderer with ray marching and SDFs, from scratch in python.
+# Pygame-3D
+3D graphics rednerer for Pygame, using rasterization to flatten a 3D scene into a 2D image.
