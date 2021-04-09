@@ -49,11 +49,3 @@ class Camera():
 
         self.s = self.c.add(self.n.scale(self.k)) # define centre of screen, offset from the camera point by a scaled version of normal vector
 
-
-x = Camera()
-
-print(x.n)
-
-x = x.turn_y(3.14159)
-
-print(x.n)
