@@ -25,16 +25,26 @@ class Camera():
     def turn_x(self, a):
         """take some angle a in radians and rotate the normal vector. see https://en.wikipedia.org/wiki/Rotation_matrix#In_three_dimensions"""
         
+        rotation_matrix = Matrix([
+            Vec3([1, 0, 0]),
+            Vec3([0, cos(a), -sin(a)]),
+            Vec3([0, sin(a), cos(a)])
+        ])
+
+        self.n = self.n.transform(rotation_matrix) # transform the normal vector by the above rotation matrix
+
         self.s = self.c.add(self.k * self.n) # define centre of screen, offset from the camera point by a scaled version of normal vector
 
 
     def turn_y(self, a):
-        """take some angle a in radians and rotate the normal vector. see Camera.turn_x for source."""
-    
-        self.s = self.c.add(self.k * self.n) # define centre of screen, offset from the camera point by a scaled version of normal vector
+        """take some angle a in radians and rotate the normal vector. see https://en.wikipedia.org/wiki/Rotation_matrix#In_three_dimensions"""
 
+        rotation_matrix = Matrix([
+            Vec([cos(a), 0, sin(a)]),
+            Vec([0, 1, 0]),
+            Vec([-sin(a), 0, cos(a)])
+        ])
 
-    def turn_z(self, a):
-        """take some angle a in radians and rotate the normal vector. see Camera.turn_x for source."""
+        self.n = self.n.transform(rotation_matrix) # transform the normal vector by the above rotation matrix
 
         self.s = self.c.add(self.k * self.n) # define centre of screen, offset from the camera point by a scaled version of normal vector
