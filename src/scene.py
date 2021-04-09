@@ -1,6 +1,7 @@
 
 
 from vector import Vec3, Vec2
+from camera import Camera
 
 
 class Line2D():
@@ -28,6 +29,18 @@ class Shape3D():
         self.points = edges # list of Line3D objects
 
 
+class Scene():
+
+    def __init__(self):
+
+        self.camera = Camera()
+        self.shapes = [] # empty list of shapes
+    
+    def add_shape(self, shape):
+        self.shapes.append(shape)
+        return self # in case this is called on a dummy scene which isn't saved
+
+
 unit_cube = Shape3D([
     # bottom face
     Line3D(Vec3([0, 0, 2]), Vec3([1, 0, 2])),
@@ -45,3 +58,5 @@ unit_cube = Shape3D([
     Line3D(Vec3([1, 1, 3]), Vec3([0, 1, 3])),
     Line3D(Vec3([0, 1, 3]), Vec3([0, 1, 2]))
 ])
+
+cube_scene = Scene().add_shape(unit_cube)
