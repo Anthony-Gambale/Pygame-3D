@@ -1,12 +1,18 @@
 
 
-from vector import Vec3
+from vector import Vec3, Vec2
+
+
+class Line2D():
+
+    def __init__(self, p1, p2):
+        self.p1 = p1 # p1 and p2 are Vec2 objects, indicating the start and end points of the line
+        self.p2 = p2
 
 
 class Line3D():
 
     def __init__(self, p1, p2):
-
         self.p1 = p1 # p1 and p2 are Vec3 objects, indicating the start and end points of the line
         self.p2 = p2
     
