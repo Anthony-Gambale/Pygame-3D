@@ -1,6 +1,6 @@
 
 
-from vector import *
+from vector import Vec3
 
 
 class Line3D():
