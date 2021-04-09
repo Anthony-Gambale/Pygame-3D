@@ -15,15 +15,20 @@ class Vec():
     def add(self, other):
         """add Vec self to Vec other, elementwise"""
         if len(self.elems) == len(other.elems):
-            self.elems = [self.elems[i] + other.elems[i] for i in range(len(self.elems))]
-            return self # just in case the user wants to use the sum in some other way
+            return Vec([self.elems[i] + other.elems[i] for i in range(len(self.elems))]) # return a new vector without changing self
         else:
             return "error: in vector addition, vectors did not have the same number of elements"
     
+    def sub(self, other):
+        """add Vec self to Vec other, elementwise"""
+        if len(self.elems) == len(other.elems):
+            return Vec([self.elems[i] - other.elems[i] for i in range(len(self.elems))]) # return a new vector without changing self
+        else:
+            return "error: in vector addition, vectors did not have the same number of elements"
+
     def scale(self, k):
         """scale Vec self by Num k"""
-        self.elems = [e * k for e in self.elems]
-        return self # just in case the user wants to use the vector in some other way
+        return Vec([e * k for e in self.elems]) # return a new vector, and leave self unchanged
 
     def dot(self, other):
         """return the dot product of Vec self and Vec other"""
