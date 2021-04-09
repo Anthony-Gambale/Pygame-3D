@@ -48,4 +48,3 @@ class Camera():
         self.n = self.n.transform(rotation_matrix) # transform the normal vector by the above rotation matrix
 
         self.s = self.c.add(self.n.scale(self.k)) # define centre of screen, offset from the camera point by a scaled version of normal vector
-

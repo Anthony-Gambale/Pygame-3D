@@ -46,7 +46,7 @@ class Vec():
 
     def transform(self, matrix):
         """transform self by a matrix. matrix must have enough columns to fit Vec self, and it must be square so that it maps Vec self back into the same space."""
-        if not matrix.rows == matrix.cols and matrix.cols == len(self.elems):
+        if not matrix.row_num == matrix.col_num and matrix.col_num == len(self.elems):
             return "error: matrix in transformation must be square, and it must have enough columns to fit the vector"
         
         output_elems = []
@@ -63,14 +63,15 @@ class Matrix():
 
         self.rows = vec_list # list of vectors, where each vector represents a row. this way rows can be iterated over
     
-    def rows(self):
+    def row_num(self):
         return len(self.rows)
 
-    def cols(self):
+    def col_num(self):
         return len(self.rows[0].elems)
 
     def shape(self):
-        return (self.rows, self,cols)
+        return (self.row_num, self.col_num)
+
 
 class Vec2(Vec):
     
