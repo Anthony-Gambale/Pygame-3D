@@ -62,7 +62,15 @@ class Matrix():
     def __init__(self, vec_list):
 
         self.rows = vec_list # list of vectors, where each vector represents a row. this way rows can be iterated over
+    
+    def rows(self):
+        return len(self.rows)
 
+    def cols(self):
+        return len(self.rows[0].elems)
+
+    def shape(self):
+        return (self.rows, self,cols)
 
 class Vec2(Vec):
     
