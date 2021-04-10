@@ -16,10 +16,15 @@ class Camera():
         self.s = self.c.add(self.n.scale(self.k)) # define centre of screen, offset from the camera point by a scaled version of normal vector
 
 
+    def update(self):
+        """re-define s from new k, n and c values (if they change, this function is called)"""
+        self.s = self.c.add(self.n.scale(self.k)) # define centre of screen, offset from the camera point by a scaled version of normal vector
+
+
     def translate(self, m):
         """translate the camera with some velocity, Vec3 m"""
-        self.c = self.c.add(m)
-        self.s = self.c.add(self.n.scale(self.k)) # define centre of screen, offset from the camera point by a scaled version of normal vector
+        self.c = self.c.add(m) # translate the camera
+        self.update() # update the screen position
     
 
     def turn_x(self, a):
@@ -31,9 +36,8 @@ class Camera():
             Vec3([0, sin(a), cos(a)])
         ])
 
-        self.n = self.n.transform(rotation_matrix) # transform the normal vector by the above rotation matrix
-
-        self.s = self.c.add(self.n.scale(self.k)) # define centre of screen, offset from the camera point by a scaled version of normal vector
+        self.n = self.n.transform(rotation_matrix) # transform the normal vector
+        self.update() # update the screen position
 
 
     def turn_y(self, a):
@@ -46,5 +50,4 @@ class Camera():
         ])
 
         self.n = self.n.transform(rotation_matrix) # transform the normal vector by the above rotation matrix
-
-        self.s = self.c.add(self.n.scale(self.k)) # define centre of screen, offset from the camera point by a scaled version of normal vector
+        self.update() # update the screen position
