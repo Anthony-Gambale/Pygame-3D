@@ -1,0 +1,33 @@
+
+
+from scene import *
+
+
+def project_scene(scn):
+    """ Take in a scene, and project all shapes onto the camera. Return a list of 2D shape
+    objects. """
+
+
+def project_shape(shp, cam):
+    """ take in Shape3D shp and Camera cam, and project the shape onto the screen.
+    1. project each line in the shape
+    2. make sure all new lines are grouped together in a Shape2D object """
+    pass
+
+
+def project_line(lin, cam):
+    """ take in Line3D lin and Camera cam, and project it to 2D.
+    1. project the first point
+    2. project the second point
+    3. output the two points together in a Line2D object """
+    pass
+
+
+def project_point(p, cam):
+    """ take in a Vec3 point p, and project it to 2D with respect to the input Camera cam.
+    1. find the line that crosses through the point p, and the camera location c
+    2. define the plane of the camera screen
+    3. find where the line and plane cross, and call this point x
+    4. find the relative distance from the centre of the screen s to the point x, and use
+    that relative distance to draw the point on the user's screen. """
+    pass
