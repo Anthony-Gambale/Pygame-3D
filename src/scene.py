@@ -4,15 +4,13 @@ from vector import Vec3, Vec2
 from camera import Camera
 
 
+"""Lines"""
 class Line2D():
-
     def __init__(self, p1, p2):
         self.p1 = p1 # p1 and p2 are Vec2 objects, indicating the start and end points of the line
         self.p2 = p2
 
-
 class Line3D():
-
     def __init__(self, p1, p2):
         self.p1 = p1 # p1 and p2 are Vec3 objects, indicating the start and end points of the line
         self.p2 = p2
@@ -20,25 +18,29 @@ class Line3D():
     def m(self):
         """return a vector-gradient of the line. I.e., in the x = p + mt form, the m vector."""
         return self.p1.sub(self.p2) # difference between two points known to lie on line
-    
+
+
+"""Shapes"""
+class Shape2D():
+    def __init__(self, edges):
+        self.points = edges # list of line2D objects
 
 class Shape3D():
-
     def __init__(self, edges):
-
         self.points = edges # list of Line3D objects
 
 
+"""Scene (shapes + camera)"""
 class Scene():
 
     def __init__(self):
-
         self.camera = Camera()
         self.shapes = [] # empty list of shapes
-    
+
     def add_shape(self, shape):
         self.shapes.append(shape)
         return self # in case this is called on a dummy scene which isn't saved
+
 
 
 unit_cube = Shape3D([
