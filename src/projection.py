@@ -6,6 +6,7 @@ from scene import *
 def project_scene(scn):
     """ Take in a scene, and project all shapes onto the camera. Return a list of 2D shape
     objects. """
+    pass
 
 
 def project_shape(shp, cam):
@@ -30,4 +31,22 @@ def project_point(p, cam):
     3. find where the line and plane cross, and call this point x
     4. find the relative distance from the centre of the screen s to the point x, and use
     that relative distance to draw the point on the user's screen. """
-    pass
+    
+    s = cam.s
+    n = cam.n
+    c = cam.c
+    
+    m = Line3D(p, c).gradient()
+
+    # t is the parameter in the parametric equation of the line.
+    # this specific t value represents the point in space where the line and screen plane cross
+    t = (n.dot(s.sub(p))) / (n.dot(m))
+
+    # extract the point x from t
+    x = p.add(m.scale(t)) # since x = p + t*m
+
+    # find the relative distance from the centre to x
+    d = s.sub(x)
+
+    # return the distance
+    return d
