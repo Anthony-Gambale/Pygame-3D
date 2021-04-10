@@ -1,5 +1,6 @@
 
 # Linear algebra arithmetic module
+from math import sqrt
 
 
 class Vec():
@@ -55,6 +56,10 @@ class Vec():
             output_elems.append(self.dot(row))
         
         return Vec(output_elems) # return output without changing the current vector
+    
+
+    def magnitude(self):
+        return sqrt(sum([e*e for e in self.elems]))
 
 
 class Matrix():

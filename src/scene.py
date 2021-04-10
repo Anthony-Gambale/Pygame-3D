@@ -5,17 +5,18 @@ from camera import Camera
 
 
 """Lines"""
-class Line2D():
+class Line():
     def __init__(self, p1, p2):
-        self.p1 = p1 # p1 and p2 are Vec2 objects, indicating the start and end points of the line
+        self.p1 = p1 # p1 and p2 are either Vec2 or Vec3 objects, indicating the start and end points of the line
         self.p2 = p2
 
-class Line3D():
-    def __init__(self, p1, p2):
-        self.p1 = p1 # p1 and p2 are Vec3 objects, indicating the start and end points of the line
-        self.p2 = p2
-    
-    def m(self):
+class Line2D(Line):
+    def gradient(self):
+        """return constant gradient of the line."""
+        return (self.p1.sub(self.p2)).magnitude() # does not modify self.p1 or self.p2
+
+class Line3D(Line):
+    def gradient(self):
         """return a vector-gradient of the line. I.e., in the x = p + mt form, the m vector."""
         return self.p1.sub(self.p2) # difference between two points known to lie on line
 
