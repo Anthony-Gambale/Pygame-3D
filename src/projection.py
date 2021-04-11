@@ -48,5 +48,5 @@ def project_point(p, cam):
     # find the relative distance from the centre to x
     d = s.sub(x)
 
-    # return the distance
-    return d
+    # turn the 3D relative distance into a 2D vector, pointing from the centre of the screen
+    

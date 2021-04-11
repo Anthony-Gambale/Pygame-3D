@@ -44,22 +44,22 @@ class Scene():
 
 
 
-unit_cube = Shape3D([
+cube_100 = Shape3D([
     # bottom face
-    Line3D(Vec3([0, 0, 2]), Vec3([1, 0, 2])),
-    Line3D(Vec3([1, 0, 2]), Vec3([1, 0, 3])),
-    Line3D(Vec3([1, 0, 3]), Vec3([0, 0, 3])),
-    Line3D(Vec3([0, 0, 3]), Vec3([0, 0, 2])),
+    Line3D(Vec3([0, 0, 200]), Vec3([100, 0, 200])),
+    Line3D(Vec3([100, 0, 200]), Vec3([100, 0, 300])),
+    Line3D(Vec3([100, 0, 300]), Vec3([0, 0, 300])),
+    Line3D(Vec3([0, 0, 300]), Vec3([0, 0, 200])),
     # edges connecting bottom and top face
-    Line3D(Vec3([0, 1, 2]), Vec3([0, 0, 2])),
-    Line3D(Vec3([1, 1, 2]), Vec3([1, 0, 2])),
-    Line3D(Vec3([1, 1, 3]), Vec3([1, 0, 3])),
-    Line3D(Vec3([0, 1, 3]), Vec3([0, 0, 3])),
+    Line3D(Vec3([0, 100, 200]), Vec3([0, 0, 200])),
+    Line3D(Vec3([1, 100, 200]), Vec3([100, 0, 200])),
+    Line3D(Vec3([1, 100, 300]), Vec3([100, 0, 300])),
+    Line3D(Vec3([0, 100, 300]), Vec3([0, 0, 300])),
     # top face
-    Line3D(Vec3([0, 1, 2]), Vec3([1, 1, 2])),
-    Line3D(Vec3([1, 1, 2]), Vec3([1, 1, 3])),
-    Line3D(Vec3([1, 1, 3]), Vec3([0, 1, 3])),
-    Line3D(Vec3([0, 1, 3]), Vec3([0, 1, 2]))
+    Line3D(Vec3([0, 100, 200]), Vec3([100, 100, 200])),
+    Line3D(Vec3([100, 100, 200]), Vec3([100, 100, 300])),
+    Line3D(Vec3([100, 100, 300]), Vec3([0, 100, 300])),
+    Line3D(Vec3([0, 100, 300]), Vec3([0, 100, 200]))
 ])
 
-cube_scene = Scene().add_shape(unit_cube)
+cube_scene = Scene().add_shape(cube_100)
