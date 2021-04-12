@@ -1,16 +1,22 @@
 
 import pygame
 from projection import project_scene
-from scene import cube_scene, Line2D
-from vector import Vec2
+from scene import cube_scene
+
+### debug
+# from scene import Line2D
+# from vector import Vec2
+# test_line = Line2D(Vec2([0, 0]), Vec2([20, 300])) # for testing
 
 pygame.init()
 
-win=pygame.display.set_mode((500, 500))
+win_width = 700
+win_height = win_width
+win=pygame.display.set_mode((win_width, win_height))
 pygame.display.set_caption("Pygame 3D")
 
 Scene = cube_scene
-test_line = Line2D(Vec2([0, 0]), Vec2([100, 100]))
+
 
 run = True
 
@@ -32,7 +38,9 @@ while run:
     """ draw current scene """
 
     # add to the display
-    test_line.draw(win)
+
+    # debug
+    #test_line.draw(win, win_width, win_height)
 
     # update the display
     pygame.display.update()

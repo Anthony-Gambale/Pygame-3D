@@ -16,10 +16,19 @@ class Line2D(Line):
         """return constant gradient of the line."""
         return (self.p1.sub(self.p2)).magnitude() # does not modify self.p1 or self.p2
 
-    def draw(self, window):
+    def draw(self, window, ww, wh):
         """take pygame window as input, and draw self onto it as a white line"""
         [x1, y1] = self.p1.elems # split vectors into raw coords
         [x2, y2] = self.p2.elems
+
+        # calibrate such that 0,0 will be at the centre of the screen
+        # using ww and wh (window width and window height)
+        x1 = ww/2 + x1 # I want positive x to go right (no change)
+        x2 = ww/2 + x2
+        y1 = wh/2 - y1 # I want positive y to go up (flip pygame's definition)
+        y2 = wh/2 - y2
+
+        # draw the line
         pygame.draw.line(window, (255, 255, 255), (x1,y1), (x2,y2), 2)
 
 class Line3D(Line):
