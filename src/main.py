@@ -2,11 +2,7 @@
 import pygame
 from projection import project_scene
 from scene import cube_scene
-
-### debug
-# from scene import Line2D
-# from vector import Vec2
-# test_line = Line2D(Vec2([0, 0]), Vec2([20, 300])) # for testing
+from vector import Vec3
 
 pygame.init()
 
@@ -34,28 +30,28 @@ while run:
         if event.type == pygame.QUIT:
             run = False
     
-        # key presses
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_LEFT:
-                pass
-            elif event.key == pygame.K_RIGHT:
-                pass
-            elif event.key == pygame.K_UP:
-                pass
-            elif event.key == pygame.K_DOWN:
-                pass
-            elif event.key == ord('w'):
-                pass
-            elif event.key == ord('a'):
-                pass
-            elif event.key == ord('s'):
-                pass
-            elif event.key == ord('d'):
-                pass
-            elif event.key == pygame.K_LSHIFT:
-                pass
-            elif event.key == pygame.K_SPACE:
-                pass
+    keys = pygame.key.get_pressed()
+
+    if keys[pygame.K_LEFT]:
+        pass
+    if keys[pygame.K_RIGHT]:
+        pass
+    if keys[pygame.K_UP]:
+        pass
+    if keys[pygame.K_DOWN]:
+        pass
+    if keys[ord('w')]:
+        pass
+    if keys[ord('a')]:
+        scene.camera.translate(Vec3([-5, 0, 0]))
+    if keys[ord('s')]:
+        pass
+    if keys[ord('d')]:
+        pass
+    if keys[pygame.K_LSHIFT]:
+        pass
+    if keys[pygame.K_SPACE]:
+        pass
 
     """ draw current scene """
     #  clear the previous frame
@@ -65,9 +61,6 @@ while run:
     for projected_shape in project_scene(scene):
         for projected_line in projected_shape.lines:
             projected_line.draw(win, win_width, win_height)
-
-    # debug
-    #test_line.draw(win, win_width, win_height)
 
     # update the display
     pygame.display.update()
