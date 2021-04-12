@@ -45,8 +45,7 @@ class Camera():
         ])
 
         self.n = self.n.transform(rotation_matrix) # transform the normal vector
-        self.bx = self.bx.transform(rotation_matrix) # transform basis vectors
-        self.by = self.by.transform(rotation_matrix)
+        self.by = self.by.transform(rotation_matrix) # transform basis vector
 
         self.update() # update the screen position
 
@@ -61,7 +60,6 @@ class Camera():
         ])
 
         self.n = self.n.transform(rotation_matrix) # transform the normal vector
-        self.bx = self.bx.transform(rotation_matrix) # transform basis vectors
-        self.by = self.by.transform(rotation_matrix)
+        self.bx = self.bx.transform(rotation_matrix) # transform basis vector
 
         self.update() # update the screen position

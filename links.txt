@@ -1,6 +1,0 @@
-
-perspective projection
-https://en.wikipedia.org/wiki/3D_projection#Mathematical_formula
-
-transforming the plane into 2 dimensions
-https://en.wikipedia.org/wiki/Cross_product#Computing_the_cross_product
