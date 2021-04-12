@@ -3,5 +3,4 @@ perspective projection
 https://en.wikipedia.org/wiki/3D_projection#Mathematical_formula
 
 transforming the plane into 2 dimensions
-https://math.stackexchange.com/questions/3648501/understanding-a-transform-of-3d-plane-coordinates-to-xy-plane
-https://math.stackexchange.com/questions/3528493/convert-3d-point-onto-a-2d-coordinate-plane-of-any-angle-and-location-within-the
+https://en.wikipedia.org/wiki/Cross_product#Computing_the_cross_product

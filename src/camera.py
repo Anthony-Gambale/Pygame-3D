@@ -8,12 +8,20 @@ from math import cos, sin
 
 class Camera():
 
+
     def __init__(self):
 
         self.c = Vec3([0, 0, 0]) # initialize the c vector to be 0,0,0
         self.n = Vec3([0, 0, 1]) # normal vector, pointing into the z axis from the origin. this is the direction the camera faces
         self.k = 1 # scalar distance from c to s
         self.s = self.c.add(self.n.scale(self.k)) # define centre of screen, offset from the camera point by a scaled version of normal vector
+
+        # local basis vectors of the plane in 3D are just i and j for now
+        # since the plane is initialised to be the xy plane
+        # when the user rotates the camera, the basis vectors must be rotated
+        # when the user translates the camera, the basis vectors remain the same
+        self.bx = Vec3([1, 0, 0])
+        self.by = Vec3([0, 1, 0])
 
 
     def update(self):
@@ -37,6 +45,9 @@ class Camera():
         ])
 
         self.n = self.n.transform(rotation_matrix) # transform the normal vector
+        self.bx = self.bx.transform(rotation_matrix) # transform basis vectors
+        self.by = self.by.transform(rotation_matrix)
+
         self.update() # update the screen position
 
 
@@ -49,5 +60,8 @@ class Camera():
             Vec([-sin(a), 0, cos(a)])
         ])
 
-        self.n = self.n.transform(rotation_matrix) # transform the normal vector by the above rotation matrix
+        self.n = self.n.transform(rotation_matrix) # transform the normal vector
+        self.bx = self.bx.transform(rotation_matrix) # transform basis vectors
+        self.by = self.by.transform(rotation_matrix)
+
         self.update() # update the screen position
