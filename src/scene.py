@@ -18,7 +18,9 @@ class Line2D(Line):
 
     def draw(self, window):
         """take pygame window as input, and draw self onto it as a white line"""
-        pass
+        [x1, y1] = self.p1.elems # split vectors into raw coords
+        [x2, y2] = self.p2.elems
+        pygame.draw.line(window, (255, 255, 255), (x1,y1), (x2,y2), 2)
 
 class Line3D(Line):
     def gradient(self):
@@ -33,8 +35,9 @@ class Shape():
 
 class Shape2D(Shape):
     def draw(self, window):
-        """take pygame window as input, and draw self onto it as a collection of white line edges"""
-        pass
+        """take pygame window as input, and draw self onto it as a collection of line edges"""
+        for edge in self.lines:
+            edge.draw(window)
 
 class Shape3D(Shape):
     pass
@@ -61,8 +64,8 @@ cube_100 = Shape3D([
     Line3D(Vec3([0, 0, 300]), Vec3([0, 0, 200])),
     # edges connecting bottom and top face
     Line3D(Vec3([0, 100, 200]), Vec3([0, 0, 200])),
-    Line3D(Vec3([1, 100, 200]), Vec3([100, 0, 200])),
-    Line3D(Vec3([1, 100, 300]), Vec3([100, 0, 300])),
+    Line3D(Vec3([100, 100, 200]), Vec3([100, 0, 200])),
+    Line3D(Vec3([100, 100, 300]), Vec3([100, 0, 300])),
     Line3D(Vec3([0, 100, 300]), Vec3([0, 0, 300])),
     # top face
     Line3D(Vec3([0, 100, 200]), Vec3([100, 100, 200])),
