@@ -33,25 +33,25 @@ while run:
     keys = pygame.key.get_pressed()
 
     if keys[pygame.K_LEFT]:
-        pass
+        scene.camera.turn_y(-0.15)
     if keys[pygame.K_RIGHT]:
-        pass
+        scene.camera.turn_y(0.15)
     if keys[pygame.K_UP]:
-        pass
+        scene.camera.turn_x(-0.15)
     if keys[pygame.K_DOWN]:
-        pass
+        scene.camera.turn_x(0.15)
     if keys[ord('w')]:
-        pass
+        scene.camera.translate(Vec3([0, 0, 7]))
     if keys[ord('a')]:
-        scene.camera.translate(Vec3([-5, 0, 0]))
+        scene.camera.translate(Vec3([-7, 0, 0]))
     if keys[ord('s')]:
-        pass
+        scene.camera.translate(Vec3([0, 0, -7]))
     if keys[ord('d')]:
-        pass
+        scene.camera.translate(Vec3([7, 0, 0]))
     if keys[pygame.K_LSHIFT]:
-        pass
+        scene.camera.translate(Vec3([0, -7, 0]))
     if keys[pygame.K_SPACE]:
-        pass
+        scene.camera.translate(Vec3([0, 7, 0]))
 
     """ draw current scene """
     #  clear the previous frame

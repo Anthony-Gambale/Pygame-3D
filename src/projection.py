@@ -55,7 +55,9 @@ def project_point(p, cam):
 
     # t is the parameter in the parametric equation of the line.
     # this specific t value represents the point in space where the line and screen plane cross
-    t = (n.dot(s.sub(p))) / (n.dot(m))
+    div = n.dot(m)
+    if div == 0: div = 0.001
+    t = (n.dot(s.sub(p))) / div
 
     # extract the point x from t
     x = p.add(m.scale(t)) # since x = p + t*m
