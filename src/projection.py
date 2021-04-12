@@ -13,7 +13,8 @@ def project_shape(shp, cam):
     """ take in Shape3D shp and Camera cam, and project the shape onto the screen.
     1. project each line in the shape
     2. make sure all new lines are grouped together in a Shape2D object """
-    pass
+    
+    
 
 
 def project_line(lin, cam):
@@ -21,7 +22,10 @@ def project_line(lin, cam):
     1. project the first point
     2. project the second point
     3. output the two points together in a Line2D object """
-    
+    Tp1 = project_point(lin.p1, cam) # transform each point
+    Tp2 = project_point(lin.p2, cam)
+
+    return Line2D(Tp1, Tp2) # 2D line of Vec2D points
 
 
 def project_point(p, cam):
