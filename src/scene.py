@@ -22,13 +22,15 @@ class Line3D(Line):
 
 
 """Shapes"""
-class Shape2D():
+class Shape():
     def __init__(self, edges):
         self.points = edges # list of line2D objects
 
-class Shape3D():
-    def __init__(self, edges):
-        self.points = edges # list of Line3D objects
+class Shape2D(Shape):
+    pass
+
+class Shape3D(Shape):
+    pass
 
 
 """Scene (shapes + camera)"""
