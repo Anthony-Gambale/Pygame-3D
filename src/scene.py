@@ -23,10 +23,10 @@ class Line2D(Line):
 
         # calibrate such that 0,0 will be at the centre of the screen
         # using ww and wh (window width and window height)
-        x1 = ww/2 + x1 # I want positive x to go right (no change)
-        x2 = ww/2 + x2
-        y1 = wh/2 - y1 # I want positive y to go up (flip pygame's definition)
-        y2 = wh/2 - y2
+        x1 = ww/2 - x1 # I want positive x to go right (no change)
+        x2 = ww/2 - x2
+        y1 = wh/2 + y1 # I want positive y to go up (flip pygame's definition)
+        y2 = wh/2 + y2
 
         # draw the line
         pygame.draw.line(window, (255, 255, 255), (x1,y1), (x2,y2), 2)
