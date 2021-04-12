@@ -15,7 +15,7 @@ win_height = win_width
 win=pygame.display.set_mode((win_width, win_height))
 pygame.display.set_caption("Pygame 3D")
 
-Scene = cube_scene
+scene = cube_scene
 
 
 run = True
@@ -38,6 +38,9 @@ while run:
     """ draw current scene """
 
     # add to the display
+    for projected_shape in project_scene(scene):
+        for projected_line in projected_shape.lines:
+            projected_line.draw(win, win_width, win_height)
 
     # debug
     #test_line.draw(win, win_width, win_height)

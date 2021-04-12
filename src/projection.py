@@ -8,7 +8,7 @@ def project_scene(scn):
     """ Take in a scene, and project all shapes onto the camera. Return a list of 2D shape
     objects. """
     for shape in scn.shapes:
-        yield project_shape(shape, scn.cam) # return an iterator object that lists all shapes
+        yield project_shape(shape, scn.camera) # return an iterator object that lists all shapes
 
 
 def project_shape(shp, cam):
