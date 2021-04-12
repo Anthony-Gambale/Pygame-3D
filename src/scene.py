@@ -2,6 +2,7 @@
 
 from vector import Vec3, Vec2
 from camera import Camera
+import pygame
 
 
 """Lines"""
@@ -15,6 +16,10 @@ class Line2D(Line):
         """return constant gradient of the line."""
         return (self.p1.sub(self.p2)).magnitude() # does not modify self.p1 or self.p2
 
+    def draw(self, window):
+        """take pygame window as input, and draw self onto it as a white line"""
+        pass
+
 class Line3D(Line):
     def gradient(self):
         """return a vector-gradient of the line. I.e., in the x = p + mt form, the m vector."""
@@ -27,7 +32,9 @@ class Shape():
         self.lines = edges # list of line2D or line3D objects
 
 class Shape2D(Shape):
-    pass
+    def draw(self, window):
+        """take pygame window as input, and draw self onto it as a collection of white line edges"""
+        pass
 
 class Shape3D(Shape):
     pass
