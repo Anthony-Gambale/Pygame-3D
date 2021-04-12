@@ -21,7 +21,7 @@ def project_line(lin, cam):
     1. project the first point
     2. project the second point
     3. output the two points together in a Line2D object """
-    pass
+    
 
 
 def project_point(p, cam):
@@ -30,11 +30,15 @@ def project_point(p, cam):
     2. define the plane of the camera screen
     3. find where the line and plane cross, and call this point x
     4. find the relative distance from the centre of the screen s to the point x, and use
-    that relative distance to draw the point on the user's screen. """
+    that relative distance to draw the point on the user's screen.
+    5. project the relative distance onto the basis vectors of the screen. these magnitudes
+    are the necessary pixel coords."""
     
     s = cam.s
     n = cam.n
     c = cam.c
+    bx = cam.bx # basis vectors of screen plane
+    by = cam.by
     
     m = Line3D(p, c).gradient()
 
@@ -49,4 +53,8 @@ def project_point(p, cam):
     d = s.sub(x)
 
     # turn the 3D relative distance into a 2D vector, pointing from the centre of the screen
-    
+    x = (bx.dot(d)) / (bx.dot(bx))
+    y = (by.dot(d)) / (by.dot(by))
+
+    # return the x and y coords
+    return Vec2([x, y])

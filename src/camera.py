@@ -17,7 +17,7 @@ class Camera():
         self.s = self.c.add(self.n.scale(self.k)) # define centre of screen, offset from the camera point by a scaled version of normal vector
 
         # local basis vectors of the plane in 3D are just i and j for now
-        # since the plane is initialised to be the xy plane
+        # since the plane is initialised to be the xy plane, only translated in the z direction
         # when the user rotates the camera, the basis vectors must be rotated
         # when the user translates the camera, the basis vectors remain the same
         self.bx = Vec3([1, 0, 0])
