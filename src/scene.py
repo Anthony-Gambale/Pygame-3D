@@ -24,7 +24,7 @@ class Line3D(Line):
 """Shapes"""
 class Shape():
     def __init__(self, edges):
-        self.points = edges # list of line2D objects
+        self.lines = edges # list of line2D or line3D objects
 
 class Shape2D(Shape):
     pass

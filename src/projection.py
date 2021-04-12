@@ -6,15 +6,22 @@ from scene import *
 def project_scene(scn):
     """ Take in a scene, and project all shapes onto the camera. Return a list of 2D shape
     objects. """
-    pass
+    Tshapes = [] # transformed shapes
+    for shape in scn.shapes:
+        yield project_shape(shape, scn.cam) # return an iterator object that lists all shapes
 
 
 def project_shape(shp, cam):
     """ take in Shape3D shp and Camera cam, and project the shape onto the screen.
     1. project each line in the shape
     2. make sure all new lines are grouped together in a Shape2D object """
+    Tlines = [] # transformed lines
+
+    for line in shp.lines:
+        Tlines.append(project_line(line))
     
-    
+    return Shape2D(Tlines)
+        
 
 
 def project_line(lin, cam):
