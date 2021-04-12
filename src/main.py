@@ -33,9 +33,33 @@ while run:
         # user quit the program
         if event.type == pygame.QUIT:
             run = False
-        
+    
+        # key presses
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                pass
+            elif event.key == pygame.K_RIGHT:
+                pass
+            elif event.key == pygame.K_UP:
+                pass
+            elif event.key == pygame.K_DOWN:
+                pass
+            elif event.key == ord('w'):
+                pass
+            elif event.key == ord('a'):
+                pass
+            elif event.key == ord('s'):
+                pass
+            elif event.key == ord('d'):
+                pass
+            elif event.key == pygame.K_LSHIFT:
+                pass
+            elif event.key == pygame.K_SPACE:
+                pass
 
     """ draw current scene """
+    #  clear the previous frame
+    win.fill((0, 0, 0))
 
     # add to the display
     for projected_shape in project_scene(scene):
