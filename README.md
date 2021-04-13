@@ -37,7 +37,7 @@ In a traditional 3D renderer, the screen plane must remain parallel to the xy pl
 
 The plane is modelled by a normal vector, local basis vectors, and a point at its centre, as shown in Figure 3. There is also a focal point for the camera, which is distanced from the plane by a factor of n.
 
-![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3.1_plane_definition.png)  
+![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3.1_plane_definition.png)
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3.2_plane_definition.png)  
 *Figure 3: Robust plane definition. Two example cameras, with their respective vectors and points defined.*
 
