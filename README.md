@@ -4,7 +4,7 @@
 
 Pygame 3D is a 3D model renderer built with Pygame, a 2D rendering API for python.
 
-This project is an experimental demo of a mathematical technique that I came up with. This method allows the renderer to entirely skip the "view space" phase of traditional 3D rendering, saving a significant chunk of computation time.
+This project is an experimental demo of a mathematical technique that I came up with. Using this technique, the renderer can skip the "view space" phase of traditional 3D rendering in its entirety, saving a significant chunk of computation time.
 
 ### Install and Run
 ```
@@ -28,7 +28,6 @@ Using this method, the screen plane is modelled in a more robust way. In a tradi
 
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3_my_rotate.png)  
 *Figure 2: My method for rotating camera. Computation required is constant, and will never scale.*
-
 
 
 ### Finding intersection points
