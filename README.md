@@ -64,7 +64,7 @@ Once the intersection point is found, it must be mapped onto the xy plane, givin
  - Subtract intersection point x from centerpoint s, to get relative distance d
  - Project d onto local basis vectors to get x and y magnitudes  
 
-![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/5_xy_transorm.png)  
+![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/5_xy_transform.png)  
 *Figure 6: Projecting relative distance onto local basis vectors.*
 
 ### The consequences of using this method
