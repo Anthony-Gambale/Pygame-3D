@@ -15,8 +15,8 @@ scene = cube_scene
 
 delay_time = 10
 
-v_rot = 0.001 * delay_time # radians per delay tick
-v_mov = 0.1 * delay_time # units of movement per delay tick
+v_rot = 0.005 * delay_time # radians per delay tick
+v_mov = 0.3 * delay_time # units of movement per delay tick
 
 run = True
 
