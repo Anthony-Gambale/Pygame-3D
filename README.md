@@ -7,12 +7,12 @@ Pygame 3D is an extension on Pygame, an API for python which renders 2D shapes. 
 This project is a demo of an experimental mathematical technique that I came up with. This method allows the renderer to entirely skip the "view space" transformation step of a traditional 3D renderer. This saves a significant chunk of computation time.
 
 ### Install and Run
-In terminal
 ```
 $ python -m pip install pygame
 $ python src/main.py
 ```
 
-## Experimental Perspective-Projection Technique
+## Experimental Technique
 
-This demo program uses a different method for traditional perspective projection, to completely avoid all computation necessary in the traditional "view space" step.
+The main feature of this program is perspective projection. It takes the vertices of a 3D model, plus information about a camera situated in 3D space, and 'projects' the vertices of each shape onto the screen plane.
+
