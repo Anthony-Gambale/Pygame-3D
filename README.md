@@ -59,4 +59,12 @@ Note that I left out the algebra steps I took to get to the final equation.
 
 ### Transforming screen plane to xy plane
 
-### The consequences of this method
+Once the intersection point is found, it must be mapped onto the xy plane, giving pixel coordinates for rasterization.
+
+ - Subtract intersection point x from centerpoint s, to get relative distance d
+ - Project d onto local basis vectors to get x and y magnitudes  
+
+![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/5_xy_transorm.png)  
+*Figure 6: Projecting relative distance onto local basis vectors.*
+
+### The consequences of using this method
