@@ -35,7 +35,7 @@ In a traditional 3D renderer, the screen plane must remain parallel to the xy pl
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3.0_my_rotate.png)  
 *Figure 2: My method for rotating camera. Computation required is constant, and will never scale.*
 
-A screen plane is defined by local basis vectors, a normal vector and a centre point, as shown in Figure 3.
+A screen plane is defined by local basis vectors and a normal vector, as shown in Figure 3. These vectors are all orthonormal to each other.
 
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3.1_plane_definition.png)  
 *Figure 3: Robust definition of a screen. Plane with centrepoint s, local basis vectors and normal vector.*  
