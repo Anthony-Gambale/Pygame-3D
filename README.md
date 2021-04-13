@@ -40,6 +40,10 @@ The plane is modelled by a normal vector, local basis vectors, and a point at it
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3.1_plane_definition.png)  
 *Figure 3: Robust plane definition.*
 
+When the program starts, the camera position c is initialized to 0,0,0. The normal vector is initialized to a unit in the z direction, and the local basis vectors are units in the x and y direction. The k constant is just some number of units to separate c from s.  
+
+Whenever a transformation is 'requested' from the user (i.e. moving the camera, rotating the camera) these transformations are all applied to the camera vectors and values, rather than to the world around the camera.
+
 ### Finding intersection points
 
 ### Transforming screen plane to xy plane
