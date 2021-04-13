@@ -16,7 +16,7 @@ $ python Pygame-3D/src/main.py
 ## Perspective-Projection Technique
 
 ### How a traditional renderer works
-In a 3D renderer, whenever the camera is moved or rotated, instead of applying the transformation to the camera, the inverse transformation is applied to every point in the scene.  
+In a traditional 3D renderer, whenever the camera is moved or rotated, instead of applying a transformation R to the camera, the inverse transformation is applied to every model in the scene.  
 
 This creates the illusion that R is being applied to the camera, while letting the screen plane remain in place.  
 
