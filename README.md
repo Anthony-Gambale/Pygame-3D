@@ -18,9 +18,9 @@ The main feature of this program is perspective projection. It takes the vertice
 
 #### The difference from a traditional renderer
 
-![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/1_screenshot.png)
+![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/2_traditional_rotate.png)
 
-![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/1_screenshot.png)
+![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3_my_rotate.png)
 
 #### Finding intersection points
 
