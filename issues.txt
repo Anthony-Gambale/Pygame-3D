@@ -1,0 +1,4 @@
+
+ - make WASD move the camera relative to the direction of the normal vector
+ - make the arrow keys rotate the image plane about its basis vectors, rather than about the x and y axes
+ - make sure that any objects behind the camera aren't drawn to the image plane
