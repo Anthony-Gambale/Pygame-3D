@@ -2,7 +2,7 @@
 
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/1_screenshot.png)
 
-Pygame 3D is a 3D model renderer for Pygame. It uses Pygame's 2D rendering functions to display 3D models.
+Pygame 3D is a 3D renderer for Pygame. It uses Pygame's 2D rendering functions to display 3D models.
 
 This project is an experimental demo of a mathematical technique that I came up with. Using this technique, the renderer can skip the "view space" phase of traditional 3D rendering in its entirety, saving a significant chunk of computation time.
 
@@ -18,9 +18,9 @@ $ python Pygame-3D/src/main.py
 The mathematical technique that I've come up with is in optimizing perspective projection.
 
 ### How a traditional renderer works
-In a 3D renderer, whenever the camera is moved or rotated, a transformation matrix is applied to it. In Figure 1, transformation R is applied to rotate the camera.  
+In a 3D renderer, whenever the camera is moved or rotated, instead of applying the transformation to the camera, the inverse transformation is applied to every point in the scene.  
 
-In a traditional 3D renderer, R inverse is calculated, and applied to every single vertex in the scene. This creates the illusion that R is being applied to the camera, while letting the screen plane remain in place.  
+This creates the illusion that R is being applied to the camera, while letting the screen plane remain in place.  
 
 This is very computationally expensive, especially for intricate models, and scales with the detail in the scene.
 
