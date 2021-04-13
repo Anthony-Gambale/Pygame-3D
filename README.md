@@ -15,8 +15,6 @@ $ python Pygame-3D/src/main.py
 
 ## Perspective-Projection Technique
 
-The mathematical technique that I've come up with is in optimizing perspective projection.
-
 ### How a traditional renderer works
 In a 3D renderer, whenever the camera is moved or rotated, instead of applying the transformation to the camera, the inverse transformation is applied to every point in the scene.  
 
