@@ -2,7 +2,7 @@
 
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/1_screenshot.png)
 
-Pygame 3D is a 3D model renderer built with Pygame, a 2D rendering API for python.
+Pygame 3D is a 3D model renderer for Pygame. It uses Pygame's 2D rendering functions to display 3D models.
 
 This project is an experimental demo of a mathematical technique that I came up with. Using this technique, the renderer can skip the "view space" phase of traditional 3D rendering in its entirety, saving a significant chunk of computation time.
 
