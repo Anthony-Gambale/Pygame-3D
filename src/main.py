@@ -9,7 +9,7 @@ pygame.init()
 win_width = 700
 win_height = win_width
 win=pygame.display.set_mode((win_width, win_height))
-pygame.display.set_caption("Pygame 3D")
+pygame.display.set_caption("Pygame 3D Demo")
 
 scene = cube_scene
 
