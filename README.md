@@ -18,10 +18,10 @@ The main feature of this program is perspective projection. It takes the vertice
 
 #### The difference from a traditional renderer
 
-![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/2_traditional_rotate.png)
+![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/2_traditional_rotate.png)  
 *Figure 1: Traditional method for rotating camera. Computation scales with complexity of 3D models.*
 
-![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3_my_rotate.png)
+![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3_my_rotate.png)  
 *Figure 2: My method for rotating camera. Computation required is constant, and will never scale.*
 
 #### Finding intersection points
