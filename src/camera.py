@@ -59,7 +59,9 @@ class Camera():
         """take some angle a in radians, and rotate the normal vector about the basis vector, bx.
         https://math.stackexchange.com/questions/3130813/rotating-a-vector-perpendicular-to-another"""
         
-        
+        self.n = (self.n.scale(cos(a))).add(self.by.scale(sin(a)))
+
+        self.by = self.n.cross_product_3D(self.bx)
 
         self.update() # update the screen position
 
@@ -68,6 +70,8 @@ class Camera():
         """take some angle a in radians, and rotate the normal vector about the basis vector, by.
         https://math.stackexchange.com/questions/3130813/rotating-a-vector-perpendicular-to-another"""
 
-        
-        
+        self.n = (self.n.scale(cos(a))).add(self.bx.scale(sin(a)))
+
+        self.bx = self.n.cross_product_3D(self.by)
+
         self.update() # update the screen position
