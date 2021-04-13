@@ -36,7 +36,7 @@ In a traditional 3D renderer, the screen plane must remain parallel to the xy pl
 A screen plane is defined by local basis vectors and a normal vector, as shown in Figure 3. These vectors are all orthonormal to each other.
 
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3.1_plane_definition.png)  
-*Figure 3: Robust definition of a screen. Plane with centrepoint s, local basis vectors and normal vector.*  
+*Figure 3: Robust definition of a screen. Plane with orthonormal basis.*  
 
 Figure 4 has a camera point and a screen plane together. The camera point is offset from s by a factor of the normal vector.
 
