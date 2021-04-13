@@ -35,6 +35,25 @@ class Camera():
         self.update() # update the screen position
     
 
+    def move_forward(self):
+        """move the camera 'forward' relatiev to normal vector"""
+        self.translate(self.n.scale(7))
+    
+    
+    def move_backward(self):
+        """move the camera 'backward' relative to normal vector"""
+        self.translate(self.n.scale(-7))
+
+
+    def move_right(self):
+        """move the camera 'right' relative to basis vector"""
+        self.translate(self.bx.scale(7))
+
+    def move_left(self):
+        """move the camera 'left' relative to basis vector"""
+        self.translate(self.bx.scale(-7))
+
+
     def turn_x(self, a):
         """take some angle a in radians and rotate the normal vector. see https://en.wikipedia.org/wiki/Rotation_matrix#In_three_dimensions"""
         

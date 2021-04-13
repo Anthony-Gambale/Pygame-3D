@@ -41,13 +41,13 @@ while run:
     if keys[pygame.K_DOWN]:
         scene.camera.turn_x(0.15)
     if keys[ord('w')]:
-        scene.camera.translate(Vec3([0, 0, 7]))
+        scene.camera.move_forward()
     if keys[ord('a')]:
-        scene.camera.translate(Vec3([-7, 0, 0]))
+        scene.camera.move_left()
     if keys[ord('s')]:
-        scene.camera.translate(Vec3([0, 0, -7]))
+        scene.camera.move_backward()
     if keys[ord('d')]:
-        scene.camera.translate(Vec3([7, 0, 0]))
+        scene.camera.move_right()
     if keys[pygame.K_LSHIFT]:
         scene.camera.translate(Vec3([0, -7, 0]))
     if keys[pygame.K_SPACE]:
