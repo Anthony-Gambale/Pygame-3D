@@ -103,3 +103,9 @@ class Vec3(Vec):
     def __init__(self, e):
         [x, y, z] = e # make sure e is 3D
         self.elems = [x, y, z]
+
+
+# unit vectors for testing
+i = Vec3([1, 0, 0])
+j = Vec3([0, 1, 0])
+k = Vec3([1, 0, 0])

@@ -61,7 +61,7 @@ class Camera():
         
         self.n = (self.n.scale(cos(a))).add(self.by.scale(sin(a)))
 
-        self.by = self.bx.cross_product_3D(self.n)
+        self.by = self.n.cross_product_3D(self.bx)
 
         self.update() # update the screen position
 
@@ -72,6 +72,6 @@ class Camera():
 
         self.n = (self.n.scale(cos(a))).add(self.bx.scale(sin(a)))
 
-        self.bx = self.n.cross_product_3D(self.by)
+        self.bx = self.by.cross_product_3D(self.n)
 
         self.update() # update the screen position
