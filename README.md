@@ -28,7 +28,9 @@ This is very computationally expensive, especially for intricate models, and sca
 *Figure 1: Traditional method for rotating camera. Computation scales with complexity of 3D models.*
 
 ### The main difference: plane modelling
-Using this method, the screen plane is modelled in a more robust way. In a traditional 3D renderer, the screen plane is accepted to be parallel to the xy plane, shifted by some constant in the z direction. However, if the plane is modelled more robustly, it is possible to perform matrix transformations on its components, as shown in Figure 2.
+In my method, the screen plane is modelled in a more robust way.  
+
+In a traditional 3D renderer, the screen plane must remain parallel to the xy plane, shifted by some constant in the z direction. However, if the plane is modelled more robustly, it is possible to perform matrix transformations on its components, as shown in Figure 2. This saves a large chunk of computation time.
 
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3_my_rotate.png)  
 *Figure 2: My method for rotating camera. Computation required is constant, and will never scale.*
