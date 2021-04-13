@@ -8,14 +8,10 @@ This project is a demo of an experimental mathematical technique that I came up 
 
 ## Install and Run
 
-Download Pygame
+In terminal
 ```
-python -m pip install pygame
-```
-
-Run the main file
-```
-python src/main.py
+$ python -m pip install pygame
+$ python src/main.py
 ```
 
 ## Experimental Perspective-Projection Technique
