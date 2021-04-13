@@ -9,6 +9,10 @@ This project is a demo implementation of an experimental mathematical technique 
 ## Install and Run
 
 Download Pygame
+```
+python -m pip install pygame
+```
+
 Run the main file
 ```
 python src/main.py
