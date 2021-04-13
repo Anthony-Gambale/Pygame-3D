@@ -58,6 +58,19 @@ class Vec():
         return Vec(output_elems) # return output without changing the current vector
 
 
+    def cross_product_3D(self, other):
+        """return the cross product of self and other (both vectors of the same dimension)"""
+        [a, b, c] = self.elems
+        [d, e, f] = other.elems
+
+        x = b*f - c*e
+        y = c*d - a*f
+        z = a*e - b*d
+
+        return Vec3([x, y, z])
+
+
+
     def magnitude(self):
         return sqrt(sum([e*e for e in self.elems]))
 
@@ -90,15 +103,3 @@ class Vec3(Vec):
     def __init__(self, e):
         [x, y, z] = e # make sure e is 3D
         self.elems = [x, y, z]
-    
-
-    def cross_product_3D(self, other):
-        """return the cross product of self and other (both vectors of the same dimension)"""
-        [a, b, c] = self.elems
-        [d, e, f] = other.elems
-
-        x = b*f - c*e
-        y = c*d - a*f
-        z = a*e - b*d
-
-        return Vec3([x, y, z])

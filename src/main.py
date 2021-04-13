@@ -13,13 +13,17 @@ pygame.display.set_caption("Pygame 3D")
 
 scene = cube_scene
 
+delay_time = 10
+
+v_rot = 0.001 * delay_time # radians per delay tick
+v_mov = 0.1 * delay_time # units of movement per delay tick
 
 run = True
 
 while run:
 
     # small delay between step events. 10 steps per second
-    pygame.time.delay(100)
+    pygame.time.delay(delay_time)
 
     """ process user input """
 
@@ -33,25 +37,25 @@ while run:
     keys = pygame.key.get_pressed()
 
     if keys[pygame.K_LEFT]:
-        scene.camera.turn_y(-0.15)
+        scene.camera.turn_y(-v_rot)
     if keys[pygame.K_RIGHT]:
-        scene.camera.turn_y(0.15)
+        scene.camera.turn_y(v_rot)
     if keys[pygame.K_UP]:
-        scene.camera.turn_x(0.15)
+        scene.camera.turn_x(v_rot)
     if keys[pygame.K_DOWN]:
-        scene.camera.turn_x(-0.15)
+        scene.camera.turn_x(-v_rot)
     if keys[ord('w')]:
-        scene.camera.move_forward()
+        scene.camera.move_forward(v_mov)
     if keys[ord('a')]:
-        scene.camera.move_left()
+        scene.camera.move_left(v_mov)
     if keys[ord('s')]:
-        scene.camera.move_backward()
+        scene.camera.move_backward(v_mov)
     if keys[ord('d')]:
-        scene.camera.move_right()
+        scene.camera.move_right(v_mov)
     if keys[pygame.K_LSHIFT]:
-        scene.camera.translate(Vec3([0, -7, 0]))
+        scene.camera.translate(Vec3([0, -v_mov, 0]))
     if keys[pygame.K_SPACE]:
-        scene.camera.translate(Vec3([0, 7, 0]))
+        scene.camera.translate(Vec3([0, v_mov, 0]))
 
     """ draw current scene """
     #  clear the previous frame

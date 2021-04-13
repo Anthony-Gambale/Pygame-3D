@@ -1,7 +1,8 @@
 
 done
  - make WASD move the camera relative to the direction of the normal vector
+ - make the arrow keys rotate the image plane about its basis vectors, rather than about the x and y axes
 
 to do
- - make the arrow keys rotate the image plane about its basis vectors, rather than about the x and y axes
  - make sure that any objects 'behind' the camera aren't drawn to the image plane
+ - fix strange "teleportation" effect when rotating camera. solution to this is probably to ditch use of cross product.
