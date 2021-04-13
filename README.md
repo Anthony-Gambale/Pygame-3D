@@ -40,10 +40,10 @@ A screen plane is defined by local basis vectors and a normal vector, as shown i
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3.1_plane_definition.png)  
 *Figure 3: Robust definition of a screen. Plane with centrepoint s, local basis vectors and normal vector.*  
 
-Figure 4 has two examples of screens attached to camera points. The camera points are offset from s by a factor of the normal vector.
+Figure 4 has a camera point and a screen plane together. The camera point is offset from s by a factor of the normal vector.
 
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3.2_plane_definition.png)  
-*Figure 4: Screens defined robustly, and translated.*
+*Figure 4: Screen defined robustly, and paired with a camera point.*
 
 When the program starts, the camera position c is initialized to 0,0,0. The normal vector is initialized to a unit in the z direction, and the local basis vectors are units in the x and y direction. The k constant is just some number of units to separate c from s.  
 
