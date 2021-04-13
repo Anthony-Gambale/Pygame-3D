@@ -19,7 +19,9 @@ The main feature of this program is *perspective projection.* It takes the verti
 
 ### A traditional renderer
 In a 3D renderer, whenever the camera is moved or rotated, a transformation matrix is applied to it. In Figure 1, transformation R is applied to rotate the camera.  
+
 In a traditional 3D renderer, R inverse is calculated, and applied to every single vertex in the scene. This creates the illusion that R is being applied to the camera, while letting the screen plane remain in place.  
+
 This is very computationally expensive, especially for intricate models, and scales with the detail in the scene.
 
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/2_traditional_rotate.png)  
