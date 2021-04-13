@@ -56,7 +56,7 @@ Substitute t back into line equation to get intersection point x.
 
 Note that I left out the algebra steps I took to get to the final equation.  
 
-![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/4_intersections.png) 
+![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/4_intersections.png)  
 *Figure 5: Calculating the point of intersection of a ray and screen plane.*
 
 ### Transforming screen plane to xy plane
