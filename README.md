@@ -2,7 +2,7 @@
 
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/1_screenshot.png)
 
-Pygame 3D is an extension on 2D rendering API Pygame, that allows for the rendering of 3D models.
+Pygame 3D is an extension on Pygame, a 2D rendering API. It allows for the rendering of 3D models.
 
 I've used an experimental mathematical technique to avoid the "view/camera space" phase of a traditional 3D renderer, saving a large chunk of computation time.
 
