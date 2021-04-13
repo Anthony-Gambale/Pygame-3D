@@ -17,7 +17,7 @@ $ python Pygame-3D/src/main.py
 
 The main feature of this program is *perspective projection.* It takes the vertices of a 3D model, plus information about a camera in 3D space, and 'projects' the vertices of each shape onto the screen plane.
 
-### A traditional renderer
+### How a traditional renderer works
 In a 3D renderer, whenever the camera is moved or rotated, a transformation matrix is applied to it. In Figure 1, transformation R is applied to rotate the camera.  
 
 In a traditional 3D renderer, R inverse is calculated, and applied to every single vertex in the scene. This creates the illusion that R is being applied to the camera, while letting the screen plane remain in place.  
@@ -27,7 +27,7 @@ This is very computationally expensive, especially for intricate models, and sca
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/2_traditional_rotate.png)  
 *Figure 1: Traditional method for rotating camera. Computation scales with complexity of 3D models.*
 
-### The main difference - plane modelling
+### The main difference: plane modelling
 Using this method, the screen plane is modelled in a more robust way. In a traditional 3D renderer, the screen plane is accepted to be parallel to the xy plane, shifted by some constant in the z direction. However, if the plane is modelled more robustly, it is possible to perform matrix transformations on its components, as shown in Figure 2.
 
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3_my_rotate.png)  
@@ -36,6 +36,6 @@ Using this method, the screen plane is modelled in a more robust way. In a tradi
 
 ### Finding intersection points
 
-### Screen plane to xy plane transformation
+### Transforming screen plane to xy plane
 
 ### The consequences of this method
