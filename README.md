@@ -35,11 +35,13 @@ In a traditional 3D renderer, the screen plane must remain parallel to the xy pl
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3.0_my_rotate.png)  
 *Figure 2: My method for rotating camera. Computation required is constant, and will never scale.*
 
-The plane is modelled by a normal vector, local basis vectors, and a point at its centre, as shown in Figure 3. There is also a focal point for the camera, which is distanced from the plane by a factor of n.
+A screen plane is defined by local basis vectors, a normal vector and a centre point, as shown in Figure 3.
 
-![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3.1_plane_definition.png)
+![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3.1_plane_definition.png)  
+*Figure 3: Robust definition of a screen. Plane with centrepoint s, local basis vectors and normal vector.*
+
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3.2_plane_definition.png)  
-*Figure 3: Robust plane definition. Two example cameras, with their respective vectors and points defined.*
+*Figure 4: Screens defined robustly, and translated.*
 
 When the program starts, the camera position c is initialized to 0,0,0. The normal vector is initialized to a unit in the z direction, and the local basis vectors are units in the x and y direction. The k constant is just some number of units to separate c from s.  
 
