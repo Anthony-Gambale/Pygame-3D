@@ -18,6 +18,6 @@ Run the main file
 python src/main.py
 ```
 
-## Experimental Projection Technique
+## Experimental Perspective-Projection Technique
 
 This demo program uses a different method for traditional perspective projection, to completely avoid all computation necessary in the traditional "view space" step.
