@@ -15,7 +15,7 @@ $ python Pygame-3D/src/main.py
 
 ## Perspective-Projection Technique
 
-The main feature of this program is perspective projection. This is taking the vertices of a 3D model, plus information about a camera in 3D space, and 'projecting' the vertices of each shape onto the screen, represented by a plane in 3D space.
+The mathematical technique that I've come up with is in optimizing perspective projection.
 
 ### How a traditional renderer works
 In a 3D renderer, whenever the camera is moved or rotated, a transformation matrix is applied to it. In Figure 1, transformation R is applied to rotate the camera.  
@@ -32,7 +32,7 @@ In my method, the screen plane is modelled in a more robust way.
 
 In a traditional 3D renderer, the screen plane must remain parallel to the xy plane, shifted by some constant in the z direction. However, if the plane is modelled more robustly, it is possible to perform matrix transformations on its components, as shown in Figure 2. This saves a large chunk of computation time.
 
-![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3_my_rotate.png)  
+![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3.0_my_rotate.png)  
 *Figure 2: My method for rotating camera. Computation required is constant, and will never scale.*
 
 
