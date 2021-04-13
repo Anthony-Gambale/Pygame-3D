@@ -1,3 +1,7 @@
 # Pygame-3D
 
-Python 3D is a 
+Pygame 3D is an API for Pygame that allows for the rendering of simple 3D objects.
+
+## test
+
+### test
