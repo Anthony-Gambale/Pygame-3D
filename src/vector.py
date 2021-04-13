@@ -58,6 +58,11 @@ class Vec():
         return Vec(output_elems) # return output without changing the current vector
     
 
+    def cross_product(self, other):
+        """return the cross product of self and other (both vectors of the same dimension)"""
+        
+
+
     def magnitude(self):
         return sqrt(sum([e*e for e in self.elems]))
 

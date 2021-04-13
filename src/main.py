@@ -37,9 +37,9 @@ while run:
     if keys[pygame.K_RIGHT]:
         scene.camera.turn_y(0.15)
     if keys[pygame.K_UP]:
-        scene.camera.turn_x(-0.15)
-    if keys[pygame.K_DOWN]:
         scene.camera.turn_x(0.15)
+    if keys[pygame.K_DOWN]:
+        scene.camera.turn_x(-0.15)
     if keys[ord('w')]:
         scene.camera.move_forward()
     if keys[ord('a')]:
