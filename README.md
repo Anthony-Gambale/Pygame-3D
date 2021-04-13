@@ -16,3 +16,10 @@ $ python src/main.py
 
 The main feature of this program is perspective projection. It takes the vertices of a 3D model, plus information about a camera situated in 3D space, and 'projects' the vertices of each shape onto the screen plane.
 
+#### The main difference
+
+#### Normal vector plane definition
+
+#### Basis vectors and vector projection
+
+#### The consequences of this method
