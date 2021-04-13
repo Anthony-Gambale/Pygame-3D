@@ -18,7 +18,7 @@ $ python Pygame-3D/src/main.py
 ### How a traditional renderer works
 In a traditional 3D renderer, whenever some transformation R would be applied to the camera, the inverse of that transformation is applied to every model in the scene instead.  
 
-This creates the illusion that R is being applied to the camera, while letting the screen plane remain in place.  
+This creates the illusion that R is being applied to the camera, without having to move the screen plane.
 
 This is very computationally expensive, especially for intricate models, and scales with the detail in the scene.
 
