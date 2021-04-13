@@ -13,7 +13,7 @@ class Camera():
 
         self.c = Vec3([0, 0, 0]) # initialize the c vector to be 0,0,0
         self.n = Vec3([0, 0, 1]) # normal vector, pointing into the z axis from the origin. this is the direction the camera faces
-        self.k = -100 # scalar distance from c to s
+        self.k = -500 # scalar distance from c to s
         self.s = self.c.add(self.n.scale(self.k)) # define centre of screen, offset from the camera point by a scaled version of normal vector
 
         # local basis vectors of the plane in 3D are just i and j for now
@@ -56,30 +56,19 @@ class Camera():
 
 
     def turn_x(self, a):
-        """take some angle a in radians and rotate the normal vector. see https://en.wikipedia.org/wiki/Rotation_matrix#In_three_dimensions"""
+        """take some angle a in radians, and rotate the normal vector about the basis vector, bx.
+        https://math.stackexchange.com/questions/3130813/rotating-a-vector-perpendicular-to-another"""
         
-        rotation_matrix = Matrix([
-            Vec3([1, 0, 0]),
-            Vec3([0, cos(a), -sin(a)]),
-            Vec3([0, sin(a), cos(a)])
-        ])
-
-        self.n = self.n.transform(rotation_matrix) # transform the normal vector
-        self.by = self.by.transform(rotation_matrix) # transform basis vector
+        self.n = (self.n.scale(cos(a))).add(self.by.scale(sin(a)))
+        self.by = (self.by.scale(cos(a))).add(self.n.scale(sin(a)))
 
         self.update() # update the screen position
 
 
     def turn_y(self, a):
-        """take some angle a in radians and rotate the normal vector. see https://en.wikipedia.org/wiki/Rotation_matrix#In_three_dimensions"""
+        """take some angle a in radians, and rotate the normal vector about the basis vector, by.
+        https://math.stackexchange.com/questions/3130813/rotating-a-vector-perpendicular-to-another"""
 
-        rotation_matrix = Matrix([
-            Vec([cos(a), 0, sin(a)]),
-            Vec([0, 1, 0]),
-            Vec([-sin(a), 0, cos(a)])
-        ])
-
-        self.n = self.n.transform(rotation_matrix) # transform the normal vector
-        self.bx = self.bx.transform(rotation_matrix) # transform basis vector
+        
 
         self.update() # update the screen position

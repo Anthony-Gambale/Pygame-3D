@@ -83,4 +83,23 @@ cube_100 = Shape3D([
     Line3D(Vec3([0, 100, 300]), Vec3([0, 100, 200]))
 ])
 
-cube_scene = Scene().add_shape(cube_100)
+cube_100_shift = Shape3D([
+    # bottom face
+    Line3D(Vec3([0+200, 0, 200]), Vec3([100+200, 0, 200])),
+    Line3D(Vec3([100+200, 0, 200]), Vec3([100+200, 0, 300])),
+    Line3D(Vec3([100+200, 0, 300]), Vec3([0+200, 0, 300])),
+    Line3D(Vec3([0+200, 0, 300]), Vec3([0+200, 0, 200])),
+    # edges connecting bottom and top face
+    Line3D(Vec3([0+200, 100, 200]), Vec3([0+200, 0, 200])),
+    Line3D(Vec3([100+200, 100, 200]), Vec3([100+200, 0, 200])),
+    Line3D(Vec3([100+200, 100, 300]), Vec3([100+200, 0, 300])),
+    Line3D(Vec3([0+200, 100, 300]), Vec3([0+200, 0, 300])),
+    # top face
+    Line3D(Vec3([0+200, 100, 200]), Vec3([100+200, 100, 200])),
+    Line3D(Vec3([100+200, 100, 200]), Vec3([100+200, 100, 300])),
+    Line3D(Vec3([100+200, 100, 300]), Vec3([0+200, 100, 300])),
+    Line3D(Vec3([0+200, 100, 300]), Vec3([0+200, 100, 200]))
+])
+
+
+cube_scene = (Scene().add_shape(cube_100)).add_shape(cube_100_shift)
