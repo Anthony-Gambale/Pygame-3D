@@ -50,6 +50,14 @@ When the program starts, the camera position c is initialized to 0,0,0. The norm
 Whenever a transformation is made to the camera (i.e. translating the camera, rotating the camera) these transformations are all applied to the camera vectors and values, rather than to the world around the camera. This is where computation is saved.
 
 ### Finding intersection points
+Define the line parametrically. Sub the parametric line point value into the plane equation, and solve for parameter t.  
+
+Substitute t back into line equation to get intersection point x.  
+
+Note that I left out the algebra steps I took to get to the final equation.  
+
+![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/4_intersections.png) 
+*Figure 5: Calculating the point of intersection of a ray and screen plane.*
 
 ### Transforming screen plane to xy plane
 
