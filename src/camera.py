@@ -49,6 +49,7 @@ class Camera():
         """move the camera 'right' relative to basis vector"""
         self.translate(self.bx.scale(7))
 
+
     def move_left(self):
         """move the camera 'left' relative to basis vector"""
         self.translate(self.bx.scale(-7))
