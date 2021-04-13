@@ -13,9 +13,9 @@ $ python -m pip install pygame
 $ python Pygame-3D/src/main.py
 ```
 
-## Experimental Technique
+## Perspective-Projection Technique
 
-The main feature of this program is *perspective projection.* It takes the vertices of a 3D model, plus information about a camera in 3D space, and 'projects' the vertices of each shape onto the screen plane.
+The main feature of this program is perspective projection. This is taking the vertices of a 3D model, plus information about a camera in 3D space, and 'projecting' the vertices of each shape onto the screen, represented by a plane in 3D space.
 
 ### How a traditional renderer works
 In a 3D renderer, whenever the camera is moved or rotated, a transformation matrix is applied to it. In Figure 1, transformation R is applied to rotate the camera.  
