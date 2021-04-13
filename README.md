@@ -50,9 +50,9 @@ Whenever a transformation is made to the camera (i.e. translating the camera, ro
 ### Finding intersection points
 When using the robust plane definition, it is more difficult to project 3D models. My technique for this is as follows.  
 
-Define the line parametrically. Sub the parametric line point value into the plane equation, and solve for parameter t.  
-
-Substitute t back into line equation to get intersection point x.  
+ - Define ray as parametric line
+ - Substitute ray point into plane equation, and solve for t
+ - Substitute t back into line equation to get intersection point x
 
 Note that I left out the algebra steps I took to get to the final equation.  
 
