@@ -55,9 +55,9 @@ class Shape3D(Shape):
 """Scene (shapes + camera)"""
 class Scene():
 
-    def __init__(self):
+    def __init__(self, initial_shapes):
         self.camera = Camera()
-        self.shapes = [] # empty list of shapes
+        self.shapes = initial_shapes # list of shapes in the scene
 
     def add_shape(self, shape):
         self.shapes.append(shape)
@@ -101,5 +101,13 @@ cube_100_shift = Shape3D([
     Line3D(Vec3([0+200, 100, 300]), Vec3([0+200, 100, 200]))
 ])
 
+# plane underneath two cubes
+floor = Shape3D([
+    Line3D(Vec3([0, 0, 200]), Vec3([300, 0, 200])),
+    Line3D(Vec3([300, 0, 200]), Vec3([300, 0, 300])),
+    Line3D(Vec3([300, 0, 300]), Vec3([0, 0, 300])),
+    Line3D(Vec3([0, 0, 300]), Vec3([0, 0, 200]))
+])
 
-cube_scene = (Scene().add_shape(cube_100)).add_shape(cube_100_shift)
+
+cube_scene = Scene([cube_100, cube_100_shift, floor])
