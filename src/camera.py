@@ -1,6 +1,6 @@
 
 
-# note: see math sketch on github page for context on variable names
+# note: see math sketches on github page for context on variable names
 
 from vector import *
 from math import cos, sin
