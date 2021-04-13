@@ -18,8 +18,9 @@ The main feature of this program is perspective projection. It takes the vertice
 
 #### The difference from a traditional renderer
 
+
 #### Finding intersection points
 
-#### Transforming intersection points to xy plane
+#### Screen plane to xy plane transformation
 
 #### The consequences of this method
