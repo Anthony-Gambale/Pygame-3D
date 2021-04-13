@@ -43,8 +43,6 @@ Figure 4 has a camera point and a screen plane together. The camera point is off
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3.2_plane_definition.png)  
 *Figure 4: Screen defined robustly, and paired with a camera point.*
 
-When the program starts, the camera position c is initialized to 0,0,0. The normal vector is initialized to a unit in the z direction, and the local basis vectors are units in the x and y direction. The k constant is just the magnitude distance between c and s, since n is normalized.  
-
 Whenever a transformation is made to the camera (i.e. translating the camera, rotating the camera) these transformations are all applied to the camera vectors and values, rather than to the world around the camera. This is where computation is saved.
 
 ### Finding intersection points
