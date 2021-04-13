@@ -48,6 +48,8 @@ When the program starts, the camera position c is initialized to 0,0,0. The norm
 Whenever a transformation is made to the camera (i.e. translating the camera, rotating the camera) these transformations are all applied to the camera vectors and values, rather than to the world around the camera. This is where computation is saved.
 
 ### Finding intersection points
+When using the robust plane definition, it is more difficult to project 3D models.  
+
 Define the line parametrically. Sub the parametric line point value into the plane equation, and solve for parameter t.  
 
 Substitute t back into line equation to get intersection point x.  
