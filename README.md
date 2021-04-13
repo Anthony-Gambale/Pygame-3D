@@ -16,16 +16,18 @@ $ python src/main.py
 
 The main feature of this program is perspective projection. It takes the vertices of a 3D model, plus information about a camera situated in 3D space, and 'projects' the vertices of each shape onto the screen plane.
 
-#### The difference from a traditional renderer
+### A traditional renderer
 
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/2_traditional_rotate.png)  
 *Figure 1: Traditional method for rotating camera. Computation scales with complexity of 3D models.*
 
+### The main difference
+
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3_my_rotate.png)  
 *Figure 2: My method for rotating camera. Computation required is constant, and will never scale.*
 
-#### Finding intersection points
+### Finding intersection points
 
-#### Screen plane to xy plane transformation
+### Screen plane to xy plane transformation
 
-#### The consequences of this method
+### The consequences of this method
