@@ -36,7 +36,7 @@ A screen plane is defined by local basis vectors and a normal vector, as shown i
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3.1_plane_definition.png)  
 *Figure 3: Robust definition of a screen. Plane with orthonormal basis.*  
 
-Figure 4 has a camera point and a screen plane together. The camera point is offset from s by a factor k of the normal vector.
+Figure 4 has a screen plane, with an extra point representing the camera position. The camera point is offset from the centre of the screen by a factor k of the normal vector.
 
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3.2_plane_definition.png)  
 *Figure 4: Screen defined robustly, and paired with a camera point.*
