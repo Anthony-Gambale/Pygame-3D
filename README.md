@@ -25,7 +25,7 @@ This is very computationally expensive, especially for intricate models, and sca
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/2_traditional_rotate.png)  
 *Figure 1: Traditional method for rotating camera. Computation scales with complexity of 3D models.*
 
-### The main difference: plane modelling
+### The difference: plane modelling
 In my method, the screen plane is modelled in a more robust way.  
 
 In a traditional 3D renderer, the screen plane must remain parallel to the xy plane at all times. However, if the plane is modelled more robustly, it is possible to perform matrix transformations on its components, as shown in Figure 2. This saves a large chunk of computation time.
@@ -45,7 +45,7 @@ Figure 4 has a camera point and a screen plane together. The camera point is off
 
 Whenever a transformation is made to the camera (i.e. translating the camera, rotating the camera) these transformations are applied to the camera vectors and values, rather than to the world around the camera. This is where computation is saved.
 
-### Finding intersection points
+### Projecting onto robustly modelled plane
 When using the robust plane definition, it is more difficult to project 3D models. My technique for this is as follows.  
 
  - Define ray as parametric line
