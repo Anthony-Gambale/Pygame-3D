@@ -20,7 +20,7 @@ This creates the illusion that R is being applied to the camera, without having 
 
 This computation is referred to as transforming into "view space." This is very expensive, especially for intricate models, and scales with the detail in the scene.
 
-![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/2_traditional_rotate.png)  
+![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/2_traditional_rotate.png | width=600)  
 *Figure 1: Traditional method for rotating camera. Computation scales with complexity of 3D models.*  
 
 ## The difference: robust plane modelling
