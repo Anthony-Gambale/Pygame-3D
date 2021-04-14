@@ -28,17 +28,17 @@ In my method, the screen plane is modelled in a more robust way.
 
 In a traditional 3D renderer, the screen plane must remain parallel to the xy plane at all times. However, if the plane is modelled more robustly, it is possible to perform matrix transformations on its components, as shown in Figure 2. This saves a large chunk of computation time.
 
-![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3.0_my_rotate.png)  
+![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3.0_my_rotate.png | width=600)  
 *Figure 2: My method for rotating camera. Computation required is constant, and will never scale.*
 
 A screen plane is defined by local basis vectors and a normal vector, as shown in Figure 3. These vectors are all orthonormal to each other.
 
-![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3.1_plane_definition.png)  
+![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3.1_plane_definition.png | width=600)  
 *Figure 3: Robust definition of a screen. Plane with orthonormal basis.*  
 
 Figure 4 has a camera point and a screen plane together. The camera point is offset from s by a factor k of the normal vector.
 
-![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3.2_plane_definition.png)  
+![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3.2_plane_definition.png | width=600)  
 *Figure 4: Screen defined robustly, and paired with a camera point.*
 
 Whenever a transformation is made to the camera (i.e. translating the camera, rotating the camera) these transformations are applied to the camera vectors and values, rather than to the world around the camera. This is where computation is saved.  
@@ -52,7 +52,7 @@ When using the robust plane definition, it is more difficult to project 3D model
 
 Note that I left out the algebra steps I took to get to the final result.  
 
-![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/4_intersections.png)  
+![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/4_intersections.png | width=600)  
 *Figure 5: Calculating the point of intersection of a ray and screen plane.*  
 
 ## Transforming screen plane to xy plane
@@ -61,7 +61,7 @@ Once the intersection point is found, it must be mapped onto the xy plane, givin
  - Subtract intersection point x from centerpoint s, to get relative distance d
  - Project d onto local basis vectors to get x and y magnitudes  
 
-![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/5_xy_transform.png)  
+![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/5_xy_transform.png | width=600)  
 *Figure 6: Projecting relative distance onto local basis vectors.*  
 
 ## The implications of this technique
