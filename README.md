@@ -23,7 +23,7 @@ This creates the illusion that R is being applied to the camera, without having 
 This is very computationally expensive, especially for intricate models, and scales with the detail in the scene.
 
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/2_traditional_rotate.png)  
-*Figure 1: Traditional method for rotating camera. Computation scales with complexity of 3D models.*
+*Figure 1: Traditional method for rotating camera. Computation scales with complexity of 3D models.*  
 
 ### The difference: plane modelling
 In my method, the screen plane is modelled in a more robust way.  
@@ -43,7 +43,7 @@ Figure 4 has a camera point and a screen plane together. The camera point is off
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3.2_plane_definition.png)  
 *Figure 4: Screen defined robustly, and paired with a camera point.*
 
-Whenever a transformation is made to the camera (i.e. translating the camera, rotating the camera) these transformations are applied to the camera vectors and values, rather than to the world around the camera. This is where computation is saved.
+Whenever a transformation is made to the camera (i.e. translating the camera, rotating the camera) these transformations are applied to the camera vectors and values, rather than to the world around the camera. This is where computation is saved.  
 
 ### Projecting onto robustly modelled plane
 When using the robust plane definition, it is more difficult to project 3D models. My technique for this is as follows.  
@@ -55,7 +55,7 @@ When using the robust plane definition, it is more difficult to project 3D model
 Note that I left out the algebra steps I took to get to the final equation.  
 
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/4_intersections.png)  
-*Figure 5: Calculating the point of intersection of a ray and screen plane.*
+*Figure 5: Calculating the point of intersection of a ray and screen plane.*  
 
 ### Transforming screen plane to xy plane
 
@@ -65,7 +65,7 @@ Once the intersection point is found, it must be mapped onto the xy plane, givin
  - Project d onto local basis vectors to get x and y magnitudes  
 
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/5_xy_transform.png)  
-*Figure 6: Projecting relative distance onto local basis vectors.*
+*Figure 6: Projecting relative distance onto local basis vectors.*  
 
 ### The consequences of using this method
 This technique has the potential to be much faster than current 3D renderering techniques, if there are no major issues with implementing it into a real 3D rendering API.
