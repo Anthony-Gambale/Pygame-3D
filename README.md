@@ -68,4 +68,4 @@ Once the intersection point is found, it must be mapped onto the xy plane, givin
 *Figure 6: Projecting relative distance onto local basis vectors.*
 
 ### The consequences of using this method
-This technique has the potential to be much faster than current 3D renderers, like OpenGL.
+This technique has the potential to be much faster than current 3D renderering techniques, if there are no major issues with implementing it into a real 3D 
