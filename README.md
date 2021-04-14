@@ -56,7 +56,6 @@ Note that I left out the algebra steps I took to get to the final equation.
 *Figure 5: Calculating the point of intersection of a ray and screen plane.*  
 
 ## Transforming screen plane to xy plane
-
 Once the intersection point is found, it must be mapped onto the xy plane, giving pixel coordinates for rasterization.
 
  - Subtract intersection point x from centerpoint s, to get relative distance d
