@@ -13,7 +13,7 @@ $ python -m pip install pygame
 $ python Pygame-3D/src/main.py
 ```
 
-## How a traditional renderer works
+## Traditional renderer "view space" computation
 In a traditional 3D renderer, whenever some transformation R would be applied to the camera, the inverse of that transformation is applied to every model in the scene instead.  
 
 This creates the illusion that R is being applied to the camera, without having to move the screen plane.
@@ -23,7 +23,7 @@ This is very computationally expensive, especially for intricate models, and sca
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/2_traditional_rotate.png)  
 *Figure 1: Traditional method for rotating camera. Computation scales with complexity of 3D models.*  
 
-## The difference: plane modelling
+## The difference: robust plane modelling
 In my method, the screen plane is modelled in a more robust way.  
 
 In a traditional 3D renderer, the screen plane must remain parallel to the xy plane at all times. However, if the plane is modelled more robustly, it is possible to perform matrix transformations on its components, as shown in Figure 2. This saves a large chunk of computation time.
