@@ -50,7 +50,7 @@ When using the robust plane definition, it is more difficult to project 3D model
  - Substitute ray point into plane equation, and solve for t
  - Substitute t back into line equation to get intersection point x
 
-Note that I left out the algebra steps I took to get to the final equation.  
+Note that I left out the algebra steps I took to get to the final result.  
 
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/4_intersections.png)  
 *Figure 5: Calculating the point of intersection of a ray and screen plane.*  
@@ -64,5 +64,5 @@ Once the intersection point is found, it must be mapped onto the xy plane, givin
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/5_xy_transform.png)  
 *Figure 6: Projecting relative distance onto local basis vectors.*  
 
-## The consequences of using this method
+## The implications of this technique
 This technique has the potential to be much faster than current 3D renderering techniques, provided that there are no major issues with implementing it into a real 3D rendering API.
