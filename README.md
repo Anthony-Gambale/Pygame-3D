@@ -18,7 +18,7 @@ In a traditional 3D renderer, whenever some transformation R would be applied to
 
 This creates the illusion that R is being applied to the camera, without having to move the screen plane.
 
-This is very computationally expensive, especially for intricate models, and scales with the detail in the scene.
+This computation is referred to as transforming into "view space." This is very expensive, especially for intricate models, and scales with the detail in the scene.
 
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/2_traditional_rotate.png)  
 *Figure 1: Traditional method for rotating camera. Computation scales with complexity of 3D models.*  
