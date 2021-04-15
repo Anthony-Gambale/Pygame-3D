@@ -5,16 +5,13 @@ from vector import Vec2
 
 
 def project_scene(scn):
-    """ Take in a scene, and project all shapes onto the camera. Return a list of 2D shape
-    objects. """
+    """ Take in a scene, and project all shapes onto the camera. Return a list of 2D shape objects. """
     for shape in scn.shapes:
         yield project_shape(shape, scn.camera) # return an iterator object that lists all shapes
 
 
 def project_shape(shp, cam):
-    """ take in Shape3D shp and Camera cam, and project the shape onto the screen.
-    1. project each line in the shape
-    2. make sure all new lines are grouped together in a Shape2D object """
+    """ take in Shape3D shp and Camera cam, and project the shape onto the screen. """
     Tlines = [] # transformed lines
 
     for line in shp.lines:
@@ -25,10 +22,7 @@ def project_shape(shp, cam):
 
 
 def project_line(lin, cam):
-    """ take in Line3D lin and Camera cam, and project it to 2D.
-    1. project the first point
-    2. project the second point
-    3. output the two points together in a Line2D object """
+    """ take in Line3D lin and Camera cam, and project it to 2D. """
     Tp1 = project_point(lin.p1, cam) # transform each point
     Tp2 = project_point(lin.p2, cam)
 
@@ -36,14 +30,7 @@ def project_line(lin, cam):
 
 
 def project_point(p, cam):
-    """ take in a Vec3 point p, and project it to 2D with respect to the input Camera cam.
-    1. find the line that crosses through the point p, and the camera location c
-    2. define the plane of the camera screen
-    3. find where the line and plane cross, and call this point x
-    4. find the relative distance from the centre of the screen s to the point x, and use
-    that relative distance to draw the point on the user's screen.
-    5. project the relative distance onto the basis vectors of the screen. these magnitudes
-    are the necessary pixel coords."""
+    """ project 3D point onto 3D camera plane, then transform intersection point from 3D camera plane into 2D pixel coordinate space. """
     
     s = cam.s
     n = cam.n
