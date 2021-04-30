@@ -4,7 +4,7 @@
 
 Pygame 3D is a 3D renderer for Pygame. It uses Pygame's 2D rendering functions to display 3D models.
 
-This project is an experimental demo of a mathematical technique that I came up with. Using this technique, the renderer can skip the "view space" phase of traditional 3D rendering, saving a significant chunk of computation time.
+This project is a demo of a mathematical technique that I came up with. Using this technique, the "view space" step of traditional 3D rendering can be skipped. While this does save some computation time, the method requires more computation than a typical renderer in other areas, causing it to be roughly the same as a typical renderer in efficiency.
 
 ### Install and Run
 First, you will need to download the repository. If you have git installed, you can run:
@@ -71,6 +71,3 @@ Once the intersection point is found, it must be mapped onto the xy plane, givin
 
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/5_xy_transform.png)  
 *Figure 6: Projecting relative distance onto local basis vectors.*  
-
-## The implications of this technique
-This technique has the potential to be much faster than current 3D renderering techniques, provided that there are no major issues with implementing it into a real 3D rendering API.
