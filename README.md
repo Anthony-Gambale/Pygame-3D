@@ -2,7 +2,7 @@
 
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/1_screenshot.png)
 
-Pygame 3D is a 3D renderer for Pygame. It uses Pygame's 2D rendering functions to display 3D models from a perspective.
+Pygame 3D is a 3D renderer for Pygame. It uses Pygame's 2D rendering functions to display 3D models from a 3D position perspective.
 
 This project is a demo of a mathematical technique that I came up with. Using this technique, the "view space" step of traditional 3D rendering can be turned from linear to constant time complexity.
 
