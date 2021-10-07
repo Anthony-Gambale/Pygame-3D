@@ -14,11 +14,9 @@ scene.add_shape(cube_model)
 scene.add_shape(cube_model.clone(), pygame3D.Vec3([200, 0, 0]))
 scene.add_shape(plane_model)
 
-
 delay_time = 10
 v_rot = 0.002 * delay_time # radians per delay tick
 v_mov = 0.3 * delay_time # units of movement per delay tick
-
 
 running = True
 while running:

@@ -69,13 +69,13 @@ class Shape3D(Shape):
 """Scene (shapes + camera)"""
 class Scene():
 
-    def __init__(self, width, height, title="Pygame 3D Demo", initial_shapes=[], gravity=False):
+    def __init__(self, width, height, gravity=False, title="My Game"):
         self.camera = Camera()
-        self.shapes = initial_shapes # list of shapes in the scene
+        self.shapes = [] # list of shapes in the scene
         self.width = width
         self.height = height
         self.pygame_window = pygame.display.set_mode((width, height))
-        pygame.display.set_caption("Pygame 3D Demo")
+        pygame.display.set_caption(title)
 
     def add_shape(self, shape, shift=Vec3([0,0,0])):
         self.shapes.append(shape.shift(shift))
