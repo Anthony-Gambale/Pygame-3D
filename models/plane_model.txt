@@ -1,7 +1,7 @@
-# plane underneath two cubes
-floor = Shape3D([
-    Line3D(Vec3([0, 0, 200]), Vec3([300, 0, 200])),
-    Line3D(Vec3([300, 0, 200]), Vec3([300, 0, 300])),
-    Line3D(Vec3([300, 0, 300]), Vec3([0, 0, 300])),
-    Line3D(Vec3([0, 0, 300]), Vec3([0, 0, 200]))
-])
+// use double slashes like this to add comments to
+// 3D model files for pygame3D.
+
+0,0,200,300,0,200
+300,0,200,300,0,300
+300,0,300,0,0,300
+0,0,300,0,0,200

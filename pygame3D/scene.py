@@ -1,8 +1,10 @@
 
 
+from pygame3D.vector import Vec3
 from pygame3D.camera import Camera
 import pygame3D.projection
 import pygame
+from copy import deepcopy
 
 
 """Lines"""
@@ -41,6 +43,17 @@ class Line3D(Line):
 class Shape():
     def __init__(self, edges):
         self.lines = edges # list of line2D or line3D objects
+    
+    # shift a shape in an image
+    def shift(self, vector):
+        for edge in self.lines:
+            edge.p1=edge.p1.add(vector)
+            edge.p2=edge.p2.add(vector)
+        return self
+    
+    # clone yourself
+    def clone(self):
+        return deepcopy(self)
 
 class Shape2D(Shape):
     def draw(self, window):
@@ -63,8 +76,8 @@ class Scene():
         self.pygame_window = pygame.display.set_mode((width, height))
         pygame.display.set_caption("Pygame 3D Demo")
 
-    def add_shape(self, shape):
-        self.shapes.append(shape)
+    def add_shape(self, shape, shift=Vec3([0,0,0])):
+        self.shapes.append(shape.shift(shift))
         return self # in case this is called on a dummy scene which isn't saved
 
     def refresh(self):
