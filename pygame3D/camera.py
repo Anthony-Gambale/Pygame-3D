@@ -117,3 +117,10 @@ class Camera():
         self.by = self.by.transform(rotation_matrix)
 
         self.update() # update the screen position
+
+
+    def isBehind(self, point):
+        """check if the given point is behind the view plane"""
+        diff = self.c.sub(point) # difference between player position and point
+        diff_proj = diff.project(self.n) # get the component of the difference pointing in the direction of the normal vector
+        return diff_proj >= 0

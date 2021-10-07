@@ -1,0 +1,14 @@
+// use double slashes like this to add comments to
+// 3D model files for pygame3D.
+
+// base square
+0,0,0,1000,0,0
+1000,0,0,1000,0,1000
+1000,0,1000,0,0,1000
+0,0,1000,0,0,0
+
+// connect corners to tip
+0,0,0,700,700,700
+1000,0,0,700,700,700
+1000,0,1000,700,700,700
+0,0,1000,700,700,700

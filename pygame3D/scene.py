@@ -1,6 +1,6 @@
 
 
-from pygame3D.vector import Vec3
+from pygame3D.vector import Vec3, Vec2
 from pygame3D.camera import Camera
 import pygame3D.projection
 import pygame
@@ -32,6 +32,7 @@ class Line2D(Line):
 
         # draw the line
         pygame.draw.line(window, (255, 255, 255), (x1,y1), (x2,y2), 2)
+
 
 class Line3D(Line):
     def gradient(self):
@@ -86,4 +87,5 @@ class Scene():
         # draw all objects in scene
         for projected_shape in pygame3D.projection.project_scene(self):
             for projected_line in projected_shape.lines:
-                projected_line.draw(self.pygame_window, self.width, self.height)
+                if projected_line != None:
+                    projected_line.draw(self.pygame_window, self.width, self.height)

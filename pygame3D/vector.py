@@ -75,6 +75,10 @@ class Vec():
         return sqrt(sum([e*e for e in self.elems]))
 
 
+    def project(self, other):
+        return self.dot(other) / other.magnitude()**2
+
+
 class Matrix():
 
     def __init__(self, vec_list):

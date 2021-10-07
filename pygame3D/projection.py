@@ -1,6 +1,6 @@
 
 
-from pygame3D.scene import Scene, Line2D, Line3D, Shape2D
+from pygame3D.scene import Line2D, Line3D, Shape2D
 from pygame3D.vector import Vec2
 
 
@@ -18,14 +18,16 @@ def project_shape(shp, cam):
         Tlines.append(project_line(line, cam))
     
     return Shape2D(Tlines)
-        
 
 
 def project_line(lin, cam):
     """ take in Line3D lin and Camera cam, and project it to 2D. """
     Tp1 = project_point(lin.p1, cam) # transform each point
     Tp2 = project_point(lin.p2, cam)
-
+    # return a dead line if either point is behind the camera
+    # ideally these would be filtered out instead of drawn. fix later
+    if cam.isBehind(lin.p1) or cam.isBehind(lin.p2):
+        return None
     return Line2D(Tp1, Tp2) # 2D line of Vec2D points
 
 
@@ -53,8 +55,8 @@ def project_point(p, cam):
     d = s.sub(x)
 
     # turn the 3D relative distance into a 2D vector, pointing from the centre of the screen
-    x = (bx.dot(d)) / (bx.dot(bx))
-    y = (by.dot(d)) / (by.dot(by))
+    x = d.project(bx)
+    y = d.project(by)
 
     # return the x and y coords
     return Vec2([x, y])
