@@ -1,7 +1,7 @@
 
 
-from scene import Scene, Line2D, Line3D, Shape2D
-from vector import Vec2
+from pygame3D.scene import Scene, Line2D, Line3D, Shape2D
+from pygame3D.vector import Vec2
 
 
 def project_scene(scn):

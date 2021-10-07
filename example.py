@@ -6,9 +6,7 @@ import pygame3D
 # initialize pygame3D scene and models
 pygame.init()
 scene = pygame3D.Scene(700, 700) # new scene
-with open("models/cube_model.txt", 'r') as f: data = f.readlines()
-f.close()
-cube_model = pygame3D.Shape3D(data)
+cube_model = pygame3D.model_reader.read_model("models/cube_model.txt")
 scene.add_shape(cube_model)
 
 

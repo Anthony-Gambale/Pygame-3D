@@ -2,7 +2,7 @@
 
 # note: see math sketches on github page for context on variable names
 
-from vector import *
+from pygame3D.vector import *
 from math import cos, sin
 import pygame
 

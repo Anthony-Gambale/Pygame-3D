@@ -1,7 +1,7 @@
 
 
-from camera import Camera
-import projection
+from pygame3D.camera import Camera
+import pygame3D.projection
 import pygame
 
 
@@ -71,6 +71,6 @@ class Scene():
         # clear the previous frame
         self.pygame_window.fill((0, 0, 0))
         # draw all objects in scene
-        for projected_shape in projection.project_scene(self):
+        for projected_shape in pygame3D.projection.project_scene(self):
             for projected_line in projected_shape.lines:
                 projected_line.draw(self.pygame_window, self.width, self.height)
