@@ -33,6 +33,7 @@ while running:
         if event.type == pygame.QUIT:
             running = False
     
+    """ key presses """
     keys = pygame.key.get_pressed()
 
     scene.camera.move(keys, v_mov, v_rot)
