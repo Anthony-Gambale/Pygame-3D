@@ -69,7 +69,7 @@ class Shape3D(Shape):
 """Scene (shapes + camera)"""
 class Scene():
 
-    def __init__(self, width, height, title="Pygame 3D Demo", initial_shapes=[]):
+    def __init__(self, width, height, title="Pygame 3D Demo", initial_shapes=[], gravity=False):
         self.camera = Camera()
         self.shapes = initial_shapes # list of shapes in the scene
         self.width = width
@@ -83,6 +83,7 @@ class Scene():
 
     def refresh(self):
         # clear the previous frame
+        self.camera.apply_gravity()
         self.pygame_window.fill((0, 0, 0))
         # draw all objects in scene
         for projected_shape in pygame3D.projection.project_scene(self):

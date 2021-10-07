@@ -9,9 +9,9 @@ import pygame
 class Camera():
 
 
-    def __init__(self):
+    def __init__(self, gravity=True, height=20):
 
-        self.c = Vec3([0, 0, 0]) # initialize the c vector to be 0,0,0
+        self.c = Vec3([0, height, 0]) # initialize the c vector to be 0,0,0
         self.n = Vec3([0, 0, 1]) # normal vector, pointing into the z axis from the origin. this is the direction the camera faces
         self.k = -500 # scalar distance from c to s
         self.s = self.c.add(self.n.scale(self.k)) # define centre of screen, offset from the camera point by a scaled version of normal vector
@@ -22,6 +22,18 @@ class Camera():
         # when the user translates the camera, the basis vectors remain the same
         self.bx = Vec3([1, 0, 0])
         self.by = Vec3([0, 1, 0])
+
+        # gravitation
+        self.gravity = gravity
+        self.fallspeed = 0
+        self.height = height
+
+
+    def apply_gravity(self):
+        if self.gravity:
+            self.fallspeed += 0.06
+            if self.c.elems[1] - self.fallspeed <= self.height: self.c.elems[1] = self.height
+            else: self.move_down(self.fallspeed)
 
 
     def update(self):
@@ -47,9 +59,12 @@ class Camera():
         if keys[ord('d')]:
             self.move_right(v_mov)
         if keys[pygame.K_LSHIFT]:
-            self.move_down(v_mov)
+            if not self.gravity: self.move_down(v_mov)
         if keys[pygame.K_SPACE]:
-            self.move_up(v_mov)
+            if self.gravity:
+                if self.c.elems[1] == self.height: self.fallspeed = -4
+            else:
+                self.move_up(v_mov)
 
 
     def translate(self, m):

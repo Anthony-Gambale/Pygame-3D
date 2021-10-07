@@ -5,9 +5,11 @@ import pygame3D
 
 # initialize pygame3D scene and models
 pygame.init()
-scene = pygame3D.Scene(700, 700) # new scene
+scene = pygame3D.Scene(700, 700, True) # new scene
 cube_model = pygame3D.read_model("models/cube_model.txt")
 plane_model = pygame3D.read_model("models/plane_model.txt")
+pyramid_model = pygame3D.read_model("models/big_pyramid.txt")
+scene.add_shape(pyramid_model, pygame3D.Vec3([0,0,300]))
 scene.add_shape(cube_model)
 scene.add_shape(cube_model.clone(), pygame3D.Vec3([200, 0, 0]))
 scene.add_shape(plane_model)
