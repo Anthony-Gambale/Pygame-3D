@@ -80,12 +80,12 @@ class Camera():
 
     def move_up(self, velocity):
         """move the camera directly up in the scene, irrespective of basis vector"""
-        self.translate(Vec3(0, velocity, 0))
+        self.translate(Vec3([0, velocity, 0]))
 
     
     def move_down(self, velocity):
         """move the camera directly down in the scene, irrespective of basis vector"""
-        self.translate(Vec3(0, -velocity, 0))
+        self.translate(Vec3([0, -velocity, 0]))
 
 
     def turn_x(self, a):
