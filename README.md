@@ -2,26 +2,18 @@
 
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/1_screenshot.png)
 
-Pygame 3D is a 3D renderer for Pygame. It uses Pygame's 2D rendering functions to display 3D models from a 3D position perspective.
+Pygame 3D is a 3D rendering package for Pygame. It does perspective-projection onto a virtual 2D plane, and uses pygame's regular 2D drawing functions to display the result of the projection.
 
 This project is a demo of a mathematical technique that I came up with. Using this technique, the "view space" step of traditional 3D rendering can be turned from linear to constant time complexity.
 
-While this does save some computation time, the method requires more computation than a typical renderer in other areas, causing it to be roughly the same as (slightly worse than) a typical renderer in efficiency.
+While this does save some computation time, this method requires more computation during the projection step than a typical renderer, causing it to be roughly the same (if not slightly worse) in efficiency.
 
 ### Install and Run
 First, you will need to download the repository. If you have git installed, you can run:
 ```
 $ git clone https://github.com/Anthony-Gambale/Pygame-3D.git
 ```
-If you want to run the program:
-```
-$ Pygame-3D/dist/main/main.exe
-```
-If you want to use Pygame 3D source code:
-```
-$ python -m pip install pygame
-$ python Pygame-3D/src/main.py
-```
+The `pygame3D` folder within the repository is the core package for you to import into your own pygame projects.
 
 ## Traditional renderer "view space" computation
 In a traditional 3D renderer, whenever some transformation R would be applied to the camera, the inverse of that transformation is applied to every model in the scene instead.  
