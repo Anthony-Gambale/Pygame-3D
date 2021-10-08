@@ -2,22 +2,25 @@
 import pygame
 import pygame3D
 
-
 # initialize pygame3D scene and models
 pygame.init()
-scene = pygame3D.Scene(1600, 900, True) # new scene
+scene = pygame3D.Scene(800, 600, True) # new scene
 
+# 3D models
 model_location = "example_models/"
 cube_model = pygame3D.read_model(model_location + "cube_model.txt")
 plane_model = pygame3D.read_model(model_location + "plane_model.txt")
 pyramid_model = pygame3D.read_model(model_location + "big_pyramid.txt")
 line_model = pygame3D.read_model(model_location + "line.txt")
+axes_model = pygame3D.read_model(model_location + "axes.txt")
 
+# add models to scene
 scene.add_shape(pyramid_model, pygame3D.Vec3([100,0,400]))
 scene.add_shape(cube_model)
 scene.add_shape(cube_model.clone(), pygame3D.Vec3([200, 0, 0]))
 scene.add_shape(plane_model)
 scene.add_shape(line_model, pygame3D.Vec3([1200,0,-500]))
+scene.add_shape(axes_model)
 
 delay_time = 10
 v_rot = 0.002 * delay_time # radians per delay tick

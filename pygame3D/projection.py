@@ -38,7 +38,7 @@ def project_line(lin, cam):
     
     # check if points are behind screen. if so, change transformation
     if cam.isBehind(l.p1): colour = "red"
-    if cam.isBehind(l.p2): colour = "blue"
+    if cam.isBehind(l.p2): colour = "red"
 
     # return a 2 dimensional line with the transformed points
     return Line2D(Tp1, Tp2, colour) # 2D line of Vec2D points

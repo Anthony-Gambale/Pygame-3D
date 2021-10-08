@@ -138,4 +138,5 @@ class Camera():
         """check if the given point is behind the view plane"""
         diff = self.c.sub(point) # difference between player position and point
         diff_proj = diff.project(self.n) # get the component of the difference pointing in the direction of the normal vector
+        if diff_proj >= 0: print("something is behind the view plane")
         return diff_proj >= 0

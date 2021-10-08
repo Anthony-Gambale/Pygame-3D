@@ -1,6 +1,7 @@
 
 # Linear algebra arithmetic module
 from math import sqrt
+from math import ceil
 
 
 class Vec():
@@ -14,6 +15,13 @@ class Vec():
     def __str__(self):
         """behaviour for Vec when print() is called on it"""
         return str(self.elems) # print elements
+
+
+    def equals(self, other):
+        ret = True
+        for pair in zip(self.elems, other.elems):
+            ret &= ceil(pair[0]) == ceil(pair[1])
+        return ret
 
 
     def add(self, other):
