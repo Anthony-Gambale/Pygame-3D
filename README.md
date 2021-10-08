@@ -13,7 +13,7 @@ First, you will need to download the repository. If you have git installed, you 
 ```
 $ git clone https://github.com/Anthony-Gambale/Pygame-3D.git
 ```
-The `pygame3D` folder within the repository is the core package for you to import into your own pygame projects.
+The `pygame3D` folder is the core package that you can import into your own pygame projects.
 
 ## Traditional renderer "view space" computation
 In a traditional 3D renderer, whenever some transformation R would be applied to the camera, the inverse of that transformation is applied to every model in the scene instead.  
