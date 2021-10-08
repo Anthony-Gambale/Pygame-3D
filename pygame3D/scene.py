@@ -17,6 +17,9 @@ class Line():
         return deepcopy(self)
 
 class Line2D(Line):
+    def __init__(self, p1, p2, colour="white"):
+        super().__init__(p1, p2)
+        self.colour = colour
     def gradient(self):
         """return constant gradient of the line."""
         return (self.p1.sub(self.p2)).magnitude() # does not modify self.p1 or self.p2
@@ -33,8 +36,7 @@ class Line2D(Line):
         y1 = wh/2 - y1 # I want positive y to go up (flip pygame's definition)
         y2 = wh/2 - y2
 
-        # draw the line
-        pygame.draw.line(window, (255, 255, 255), (x1,y1), (x2,y2), 2)
+        pygame.draw.line(window, self.colour, (x1,y1), (x2,y2), 2)
 
 
 class Line3D(Line):

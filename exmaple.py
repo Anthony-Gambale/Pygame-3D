@@ -5,7 +5,7 @@ import pygame3D
 
 # initialize pygame3D scene and models
 pygame.init()
-scene = pygame3D.Scene(1366, 768, True) # new scene
+scene = pygame3D.Scene(1600, 900, True) # new scene
 
 model_location = "example_models/"
 cube_model = pygame3D.read_model(model_location + "cube_model.txt")

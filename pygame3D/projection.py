@@ -22,9 +22,13 @@ def project_shape(shp, cam):
 
 def project_line(lin, cam):
     """ take in Line3D lin and Camera cam, and project it to 2D. """
-    # return a dead line if either point is behind the camera
-    # ideally these would be filtered out instead of drawn. fix later
+    # colour
+    colour = "white"
+
+    # copy the line
     l = lin.copy()
+
+    # check if its behind the camera. if so, don't draw it
     if cam.isBehind(l.p1) and cam.isBehind(l.p2):
         return None
     
@@ -33,20 +37,19 @@ def project_line(lin, cam):
     Tp2 = project_point(l.p2, cam)
     
     # check if points are behind screen. if so, change transformation
-    if cam.isBehind(l.p1): Tp1 = get_coords(find_intersection(l.p2, l.p1, cam), cam)
-    if cam.isBehind(l.p2): Tp2 = get_coords(find_intersection(l.p1, l.p2, cam), cam)
-    
-    return Line2D(Tp1, Tp2) # 2D line of Vec2D points
+    if cam.isBehind(l.p1): colour = "red"
+    if cam.isBehind(l.p2): colour = "blue"
+
+    # return a 2 dimensional line with the transformed points
+    return Line2D(Tp1, Tp2, colour) # 2D line of Vec2D points
 
 
 def find_intersection(front, back, cam):
     """draw a line that connects points p1 and p2. return the point on that line that intersects the virtual screen, if there is one."""
-    s = cam.s
-    n = cam.n
     m = Line3D(front, back).gradient() # gradient of the line
-    div = n.dot(m)
-    if div == 0: div = 0.001
-    t = (n.dot(s.sub(front))) / div
+    denom = cam.n.dot(m)
+    if denom == 0: denom = 0.001
+    t = (cam.n.dot(cam.s.sub(front))) / denom
     x = front.add(m.scale(t)) # since x = p + t*m
     return x
 
