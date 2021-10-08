@@ -24,45 +24,49 @@ def project_line(lin, cam):
     """ take in Line3D lin and Camera cam, and project it to 2D. """
     # return a dead line if either point is behind the camera
     # ideally these would be filtered out instead of drawn. fix later
-    if cam.isBehind(lin.p1) or cam.isBehind(lin.p2):
+    l = lin.copy()
+    if cam.isBehind(l.p1) and cam.isBehind(l.p2):
         return None
-    #if cam.isBehind(lin.p1): lin.p1 = find_intersection(lin.p2, lin.p1, cam)
-    #if cam.isBehind(lin.p2): lin.p2 = find_intersection(lin.p2, lin.p1, cam)
+    
     # transform each point
-    Tp1 = project_point(lin.p1, cam)
-    Tp2 = project_point(lin.p2, cam)
+    Tp1 = project_point(l.p1, cam)
+    Tp2 = project_point(l.p2, cam)
+    
+    # check if points are behind screen. if so, change transformation
+    if cam.isBehind(l.p1): Tp1 = get_coords(find_intersection(l.p2, l.p1, cam), cam)
+    if cam.isBehind(l.p2): Tp2 = get_coords(find_intersection(l.p1, l.p2, cam), cam)
+    
     return Line2D(Tp1, Tp2) # 2D line of Vec2D points
 
 
-def find_intersection(p1, p2, cam):
+def find_intersection(front, back, cam):
     """draw a line that connects points p1 and p2. return the point on that line that intersects the virtual screen, if there is one."""
     s = cam.s
     n = cam.n
-    m = Line3D(p1, p2).gradient() # gradient of the line
+    m = Line3D(front, back).gradient() # gradient of the line
     div = n.dot(m)
     if div == 0: div = 0.001
-    t = (n.dot(s.sub(p1))) / div
-    x = p1.add(m.scale(t)) # since x = p + t*m
+    t = (n.dot(s.sub(front))) / div
+    x = front.add(m.scale(t)) # since x = p + t*m
     return x
+
+
+def get_coords(p, cam):
+    """take the coordinates of a 3D point that lies on the camera plane, and vector project it onto the basis unit vectors to get 2D
+    screen coordinates"""
+    x = p.project(cam.bx)
+    y = p.project(cam.by)
+    return Vec2([x, y])
 
 
 def project_point(p, cam):
     """ project 3D point onto 3D camera plane, then transform intersection point from 3D camera plane into 2D pixel coordinate space. """
     
-    s = cam.s # center point of screen
-    c = cam.c # location of user's face (offset from screen center)
-    bx = cam.bx # basis vectors of screen plane
-    by = cam.by
-    
     # find the intersection
-    x = find_intersection(p, c, cam)
+    x = find_intersection(p, cam.c, cam)
 
     # find the relative distance from the centre to x
-    d = s.sub(x)
+    d = cam.s.sub(x)
 
     # turn the 3D relative distance into a 2D vector, pointing from the centre of the screen
-    x = d.project(bx)
-    y = d.project(by)
-
-    # return the x and y coords
-    return Vec2([x, y])
+    return get_coords(d, cam)

@@ -12,6 +12,9 @@ class Line():
     def __init__(self, p1, p2):
         self.p1 = p1 # p1 and p2 are either Vec2 or Vec3 objects, indicating the start and end points of the line
         self.p2 = p2
+    
+    def copy(self):
+        return deepcopy(self)
 
 class Line2D(Line):
     def gradient(self):
