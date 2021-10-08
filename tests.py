@@ -17,9 +17,7 @@ def testIntersection():
             # test the two points
             if not testIntersectionHelper(front, back, camera):
                 print(f"Failed on test number {count}. The points were {front} and {back}.")
-                x = pygame3D.find_intersection(front, back, camera)
-                print(x)
-                print(pygame3D.find_intersection(front, x, camera))
+            print(f"{front}, {pygame3D.find_intersection(front, back, camera)}, {back}")
             count += 1
     print(f"Passed all of {count} tests.")
 
