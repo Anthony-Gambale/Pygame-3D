@@ -41,7 +41,4 @@ while running:
     """ draw current scene """
     scene.refresh()
 
-    # update the display
-    pygame.display.update()
-
 pygame.quit()

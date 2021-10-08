@@ -90,3 +90,5 @@ class Scene():
             for projected_line in projected_shape.lines:
                 if projected_line != None:
                     projected_line.draw(self.pygame_window, self.width, self.height)
+        # update the display
+        pygame.display.update()
