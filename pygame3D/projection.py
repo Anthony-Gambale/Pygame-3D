@@ -29,7 +29,7 @@ def project_line(lin, cam):
     l = lin.copy()
 
     # check if its behind the camera. if so, don't draw it
-    if cam.isBehind(l.p1) and cam.isBehind(l.p2):
+    if cam.isBehind(l.p1) or cam.isBehind(l.p2):
         return None
     
     # transform each point
