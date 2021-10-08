@@ -31,7 +31,7 @@ class Camera():
 
     def apply_gravity(self):
         if self.gravity:
-            self.fallspeed += 0.06
+            self.fallspeed += 0.08
             if self.c.elems[1] - self.fallspeed <= self.height: self.c.elems[1] = self.height
             else: self.move_down(self.fallspeed)
 
@@ -62,7 +62,7 @@ class Camera():
             if not self.gravity: self.move_down(v_mov)
         if keys[pygame.K_SPACE]:
             if self.gravity:
-                if self.c.elems[1] == self.height: self.fallspeed = -4
+                if self.c.elems[1] == self.height: self.fallspeed = -4.5
             else:
                 self.move_up(v_mov)
 
