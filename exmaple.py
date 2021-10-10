@@ -4,7 +4,7 @@ import pygame3D
 
 # initialize pygame3D scene and models
 pygame.init()
-scene = pygame3D.Scene(800, 600) # new scene
+scene = pygame3D.Scene(700, 700, title="Pygame3D Example") # new scene
 
 # 3D models
 model_location = "example_models/"
