@@ -37,6 +37,13 @@ class Line2D(Line):
         y2 = wh/2 - y2
 
         pygame.draw.line(window, self.colour, (x1,y1), (x2,y2), 2)
+    
+    def extend(self, point):
+        if point==1:
+            self.p1 = self.p1.add(self.p1.sub(self.p2).scale(1000))
+        elif point==2:
+            self.p2 = self.p2.add(self.p2.sub(self.p1).scale(1000))
+        return self
 
 
 class Line3D(Line):
@@ -47,8 +54,9 @@ class Line3D(Line):
 
 """Shapes"""
 class Shape():
-    def __init__(self, edges):
+    def __init__(self, edges, colour="white"):
         self.lines = edges # list of line2D or line3D objects
+        self.colour = colour
     
     # shift a shape in an image
     def shift(self, vector):
@@ -60,6 +68,10 @@ class Shape():
     # clone yourself
     def clone(self):
         return deepcopy(self)
+    
+    def set_colour(self, colour):
+        self.colour = colour
+        return self
 
 class Shape2D(Shape):
     def draw(self, window):

@@ -9,7 +9,7 @@ import pygame
 class Camera():
 
 
-    def __init__(self, gravity=True, height=20):
+    def __init__(self, gravity=True, height=50):
 
         self.c = Vec3([0, height, 0]) # initialize the c vector to be 0,0,0
         self.n = Vec3([0, 0, 1]) # normal vector, pointing into the z axis from the origin. this is the direction the camera faces
@@ -42,6 +42,14 @@ class Camera():
 
 
     def move(self, keys, v_mov, v_rot):
+        if keys[pygame.K_LSHIFT]:
+            if not self.gravity: self.move_down(v_mov)
+        if keys[pygame.K_SPACE]:
+            if self.gravity:
+                #if self.c.elems[1] == self.height: self.fallspeed = -18
+                self.fallspeed -= 0.2
+            else:
+                self.move_up(v_mov)
         if keys[pygame.K_LEFT]:
             self.turn_y(-v_rot)
         if keys[pygame.K_RIGHT]:
@@ -58,13 +66,6 @@ class Camera():
             self.move_backward(v_mov)
         if keys[ord('d')]:
             self.move_right(v_mov)
-        if keys[pygame.K_LSHIFT]:
-            if not self.gravity: self.move_down(v_mov)
-        if keys[pygame.K_SPACE]:
-            if self.gravity:
-                if self.c.elems[1] == self.height: self.fallspeed = -4.5
-            else:
-                self.move_up(v_mov)
 
 
     def translate(self, m):
