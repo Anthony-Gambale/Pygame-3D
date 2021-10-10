@@ -11,7 +11,6 @@ model_location = "example_models/"
 cube_model = pygame3D.read_model(model_location + "cube_model.txt")
 plane_model = pygame3D.read_model(model_location + "plane_model.txt")
 pyramid_model = pygame3D.read_model(model_location + "big_pyramid.txt")
-line_model = pygame3D.read_model(model_location + "line.txt")
 floor_model = pygame3D.read_model(model_location + "floor.txt")
 
 # change the colours of multiple objects in one line
@@ -22,7 +21,6 @@ scene.add_shape(pyramid_model, pygame3D.Vec3([100,0,400]))
 scene.add_shape(cube_model)
 scene.add_shape(cube_model.clone(), pygame3D.Vec3([200, 0, 0]))
 scene.add_shape(plane_model)
-scene.add_shape(line_model, pygame3D.Vec3([1200,0,-500]))
 scene.add_shape(floor_model)
 
 delay_time = 10
