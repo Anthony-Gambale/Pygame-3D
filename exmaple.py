@@ -4,10 +4,10 @@ import pygame3D
 
 # initialize pygame3D scene and models
 pygame.init()
-scene = pygame3D.Scene(700, 700, title="Pygame3D Example") # new scene
+scene = pygame3D.Scene(700, 700, gravity=True, title="Pygame3D Example") # new scene
 
 # 3D models
-model_location = "example_models/"
+model_location = "example_3D_models/"
 cube_model = pygame3D.read_model(model_location + "cube_model.txt")
 plane_model = pygame3D.read_model(model_location + "plane_model.txt")
 pyramid_model = pygame3D.read_model(model_location + "big_pyramid.txt")
