@@ -14,6 +14,7 @@ pyramid_model = pygame3D.read_model(model_location + "big_pyramid.txt")
 line_model = pygame3D.read_model(model_location + "line.txt")
 floor_model = pygame3D.read_model(model_location + "floor.txt")
 
+# change the colours of multiple objects in one line
 pyramid_model, cube_model, plane_model = map(lambda x: x.set_colour("green"), [pyramid_model, cube_model, plane_model])
 
 # add models to scene
