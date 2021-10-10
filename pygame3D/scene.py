@@ -87,7 +87,7 @@ class Shape3D(Shape):
 class Scene():
 
     def __init__(self, width, height, gravity=False, title="My Game"):
-        self.camera = Camera()
+        self.camera = Camera(gravity)
         self.shapes = [] # list of shapes in the scene
         self.width = width
         self.height = height
@@ -95,7 +95,7 @@ class Scene():
         pygame.display.set_caption(title)
 
     def add_shape(self, shape, shift=Vec3([0,0,0])):
-        self.shapes.append(shape.shift(shift))
+        self.shapes.append(shape.clone().shift(shift))
         return self # in case this is called on a dummy scene which isn't saved
 
     def refresh(self):

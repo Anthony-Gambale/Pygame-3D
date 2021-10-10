@@ -9,7 +9,7 @@ import pygame
 class Camera():
 
 
-    def __init__(self, gravity=True, height=50):
+    def __init__(self, gravity, height=50):
 
         self.c = Vec3([0, height, 0]) # initialize the c vector to be 0,0,0
         self.n = Vec3([0, 0, 1]) # normal vector, pointing into the z axis from the origin. this is the direction the camera faces

@@ -4,7 +4,7 @@ import pygame3D
 
 # initialize pygame3D scene and models
 pygame.init()
-scene = pygame3D.Scene(800, 600, True) # new scene
+scene = pygame3D.Scene(800, 600) # new scene
 
 # 3D models
 model_location = "example_models/"
@@ -14,14 +14,15 @@ pyramid_model = pygame3D.read_model(model_location + "big_pyramid.txt")
 floor_model = pygame3D.read_model(model_location + "floor.txt")
 
 # change the colours of multiple objects in one line
-pyramid_model, cube_model, plane_model = map(lambda x: x.set_colour("green"), [pyramid_model, cube_model, plane_model])
+pyramid_model, cube_model, plane_model = map(lambda x: x.set_colour("white"), [pyramid_model, cube_model, plane_model])
+floor_model.set_colour("blue")
 
 # add models to scene
-scene.add_shape(pyramid_model, pygame3D.Vec3([100,0,400]))
-scene.add_shape(cube_model)
-scene.add_shape(cube_model.clone(), pygame3D.Vec3([200, 0, 0]))
-scene.add_shape(plane_model)
 scene.add_shape(floor_model)
+scene.add_shape(pyramid_model, pygame3D.Vec3([100,0,1000]))
+scene.add_shape(cube_model, pygame3D.Vec3([-300, 0, 1000]))
+scene.add_shape(cube_model, pygame3D.Vec3([-100, 0, 1000]))
+scene.add_shape(plane_model, pygame3D.Vec3([-300, 0, 1000]))
 
 delay_time = 10
 v_rot = 0.002 * delay_time # radians per delay tick
