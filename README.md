@@ -8,7 +8,7 @@ This project is a demo of a mathematical technique that I came up with. Using th
 
 While this does save some computation time, this method requires more computation during the projection step than a typical renderer, causing it to be roughly the same (if not slightly worse) in efficiency.
 
-### Install and Run
+### Install and Use
 First, you will need to download the repository. If you have git installed, you can run:
 ```
 $ git clone https://github.com/Anthony-Gambale/Pygame-3D.git
