@@ -9,12 +9,7 @@ This project is a demo of a mathematical technique that I came up with. Using th
 While this does save some computation time, this method requires more computation during the projection step than a typical renderer, causing it to be roughly the same (if not slightly worse) in efficiency.
 
 ### Install and Use
-First, you will need to download the repository. If you have git installed, you can run:
-```
-$ git clone https://github.com/Anthony-Gambale/Pygame-3D.git
-```
-The `pygame3D` folder is the core package that you can import into your own pygame projects.  
-See `example.py` in this repository for an example of how to use pygame3D.
+All you need to do is download the code from the repository. The `pygame3D` folder is the core package that you can import into your own pygame projects. See `example.py` in this repository for an example of how to use pygame3D.
 
 ## Traditional renderer "view space" computation
 In a traditional 3D renderer, whenever some transformation R would be applied to the camera, the inverse of that transformation is applied to every model in the scene instead.  
