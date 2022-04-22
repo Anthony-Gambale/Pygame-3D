@@ -2,7 +2,7 @@
 
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/1.5_screenshot.png)
 
-Pygame 3D is a 3D rendering package for Pygame. It does perspective-projection onto a virtual 2D plane, and uses Pygame's regular 2D drawing functions to display the result of the projection.
+Pygame 3D is a 3D rendering package for Pygame. It does perspective-projection onto a 2D plane in the space, representing a virtual screen, and uses Pygame's regular 2D drawing functions to display the result of the projection.
 
 ### Install and Use
 The `pygame3D` folder is the core package that you can import into your own pygame projects. See `example.py` in this repository for an example of how to use pygame3D.
