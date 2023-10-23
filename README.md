@@ -7,16 +7,6 @@ Pygame 3D is a 3D rendering package for Pygame. It does perspective-projection o
 ### Install and Use
 The `pygame3D` folder is the core package that you can import into your own pygame projects. See `example.py` in this repository for an example of how to use pygame3D.
 
-## Traditional renderer "view space" computation
-In a traditional 3D renderer, whenever some transformation R would be applied to the camera, the inverse of that transformation is applied to every model in the scene instead.  
-
-This creates the illusion that R is being applied to the camera, without having to move the screen plane.
-
-This computation is referred to as transforming into "view space."
-
-![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/2_traditional_rotate.png)  
-*Figure 1: Traditional method for rotating camera. Computation scales with complexity of 3D models.*  
-
 ## Virtual 2D screen
 In this program, the screen is modelled as a 2D plane with rotational and translational motion. This skips the view-space computation, but ends up making perspective projection much more costly, resulting in overall worse performance.
 
