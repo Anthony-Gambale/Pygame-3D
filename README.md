@@ -8,7 +8,7 @@ Pygame 3D is a 3D rendering package for Pygame. It does perspective-projection o
 The `pygame3D` folder is the core package that you can import into your own pygame projects. See `example.py` in this repository for an example of how to use pygame3D.
 
 ## Virtual 2D screen
-The screen, as it sits within 3D space, is modelled as a plane with rotational and translational motion.
+The user's physical screen, as it sits within the virtual 3D world, is modelled as a plane with rotational and translational motion.
 
 ![image](https://github.com/Anthony-Gambale/Pygame-3D/blob/main/images/3.0_my_rotate.png)  
 
